@@ -1,0 +1,6 @@
+{
+  "name": "Tesla Bot Nexbot",
+  "description": "An ultra-premium, interactive showcase for the next-generation Tesla humanoid robot, featuring Spline 3D interaction, real-time specifications, customize module, and a luxury pre-order experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

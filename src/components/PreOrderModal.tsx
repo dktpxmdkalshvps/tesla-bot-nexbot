@@ -67,7 +67,8 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
           </div>
           <button 
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white transition-colors cursor-pointer"
+            aria-label="Close modal"
+            className="w-8 h-8 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:outline-none transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>

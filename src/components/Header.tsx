@@ -102,7 +102,9 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
         <button
           id="mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-white hover:text-neutral-300 transition-colors cursor-pointer"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+          className="md:hidden text-white hover:text-neutral-300 focus-visible:ring-2 focus-visible:outline-none transition-colors cursor-pointer"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>

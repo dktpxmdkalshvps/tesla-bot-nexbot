@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { X, Check, Receipt, Calendar, CreditCard, ShieldCheck, Mail, User, Phone, MapPin } from "lucide-react";
+import { X, Check, Receipt, Calendar, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2 } from "lucide-react";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
 
 interface PreOrderModalProps {
@@ -148,12 +148,13 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
               {/* Form Input Columns */}
               <form onSubmit={handleSubmit} className="md:col-span-7 space-y-5">
                 <div className="space-y-1.5">
-                  <label className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
+                  <label htmlFor="fullName" className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
                     Full Name
                   </label>
                   <div className="relative">
                     <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
                     <input
+                      id="fullName"
                       type="text"
                       required
                       placeholder="Jane Doe"
@@ -165,12 +166,13 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
+                  <label htmlFor="emailAddress" className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
                     Email Address
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
                     <input
+                      id="emailAddress"
                       type="email"
                       required
                       placeholder="jane.doe@example.com"
@@ -182,12 +184,13 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
+                  <label htmlFor="phoneNumber" className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
                     Phone Number
                   </label>
                   <div className="relative">
                     <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
                     <input
+                      id="phoneNumber"
                       type="tel"
                       placeholder="+82 10-1234-5678"
                       value={formData.phone}
@@ -198,12 +201,13 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
+                  <label htmlFor="installationCountry" className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
                     Installation Country
                   </label>
                   <div className="relative">
                     <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
                     <select
+                      id="installationCountry"
                       value={formData.country}
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                       className="w-full bg-neutral-950 border border-white/10 focus:border-white/20 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white outline-none transition-colors appearance-none"
@@ -218,8 +222,9 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                 </div>
 
                 <div className="pt-2">
-                  <label className="flex items-start gap-3 cursor-pointer group">
+                  <label htmlFor="agreeTerms" className="flex items-start gap-3 cursor-pointer group">
                     <input
+                      id="agreeTerms"
                       type="checkbox"
                       required
                       checked={formData.agreeTerms}
@@ -242,8 +247,17 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                   disabled={isSubmitting}
                   className="w-full bg-white hover:bg-neutral-200 disabled:opacity-50 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase py-4 rounded-xl transition-all duration-200 mt-2 cursor-pointer flex items-center justify-center gap-2"
                 >
-                  <CreditCard className="w-4 h-4" />
-                  {isSubmitting ? "Processing Deposit..." : "Submit Reservation"}
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Processing Deposit...
+                    </>
+                  ) : (
+                    <>
+                      <CreditCard className="w-4 h-4" />
+                      Submit Reservation
+                    </>
+                  )}
                 </button>
               </form>
 

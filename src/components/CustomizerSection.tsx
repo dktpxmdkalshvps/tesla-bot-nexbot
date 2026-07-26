@@ -214,13 +214,15 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {FINISHES.map((finish) => (
-                  <div
+                  <button
+                    type="button"
                     key={finish.id}
                     onClick={() => {
                       setSelectedFinish(finish);
                       // Reset custom LED if changing finish unless overridden manually
                     }}
-                    className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex gap-4 items-start ${
+                    aria-pressed={selectedFinish.id === finish.id}
+                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex gap-4 items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
                       selectedFinish.id === finish.id
                         ? "bg-neutral-950 border-white/20 shadow-lg"
                         : "bg-neutral-950/40 border-white/5 hover:border-white/10 hover:bg-neutral-950/80"
@@ -245,7 +247,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                         {finish.description}
                       </p>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -290,10 +292,12 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
 
               <div className="space-y-4">
                 {TASK_MODULES.map((mod) => (
-                  <div
+                  <button
+                    type="button"
                     key={mod.id}
                     onClick={() => setSelectedModule(mod)}
-                    className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex gap-4 items-start ${
+                    aria-pressed={selectedModule.id === mod.id}
+                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex gap-4 items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
                       selectedModule.id === mod.id
                         ? "bg-neutral-950 border-white/20 shadow-lg"
                         : "bg-neutral-950/40 border-white/5 hover:border-white/10 hover:bg-neutral-950/80"
@@ -324,7 +328,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                         ))}
                       </div>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -343,10 +347,12 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                 {UPGRADES.map((upgrade) => {
                   const isChecked = selectedUpgrades.some((u) => u.id === upgrade.id);
                   return (
-                    <div
+                    <button
+                      type="button"
                       key={upgrade.id}
                       onClick={() => handleUpgradeToggle(upgrade)}
-                      className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex justify-between items-center ${
+                      aria-pressed={isChecked}
+                      className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex justify-between items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
                         isChecked
                           ? "bg-neutral-950 border-white/20 shadow-lg"
                           : "bg-neutral-950/40 border-white/5 hover:border-white/10 hover:bg-neutral-950/80"
@@ -369,7 +375,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                       <span className="font-mono text-xs text-white bg-neutral-900 border border-white/5 px-3 py-1.5 rounded-lg whitespace-nowrap">
                         +${upgrade.price.toLocaleString()}
                       </span>
-                    </div>
+                    </button>
                   );
                 })}
               </div>

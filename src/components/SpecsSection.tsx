@@ -60,10 +60,12 @@ export default function SpecsSection() {
           {/* Specs List Column (left) */}
           <div className="lg:col-span-7 space-y-4">
             {activeCategory.items.map((item, index) => (
-              <div
+              <button
+                type="button"
                 key={item.label}
                 onClick={() => setSelectedSpecIndex(index)}
-                className={`group p-6 rounded-2xl border transition-all duration-300 cursor-pointer ${
+                aria-pressed={selectedSpecIndex === index}
+                className={`w-full text-left group p-6 rounded-2xl border transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
                   selectedSpecIndex === index
                     ? "bg-neutral-900 border-white/20 shadow-xl shadow-black/40"
                     : "bg-neutral-950 border-white/5 hover:border-white/10 hover:bg-neutral-900/40"
@@ -88,7 +90,7 @@ export default function SpecsSection() {
                     <ChevronRight className="w-4 h-4" />
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
 

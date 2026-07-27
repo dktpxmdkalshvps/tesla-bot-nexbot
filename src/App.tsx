@@ -24,17 +24,18 @@ export default function App() {
 
   // Track active section for navigation highlighting
   useEffect(() => {
+    const sections = ["overview", "technology", "customizer", "specs"];
+    const sectionElements = sections.map(id => ({ id, el: document.getElementById(id) })).filter(item => item.el);
+
     const handleScroll = () => {
-      const sections = ["overview", "technology", "customizer", "specs"];
       const scrollPosition = window.scrollY + 250;
 
-      for (const section of sections) {
-        const el = document.getElementById(section);
+      for (const { id, el } of sectionElements) {
         if (el) {
           const top = el.offsetTop;
           const height = el.offsetHeight;
           if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
+            setActiveSection(id);
             break;
           }
         }

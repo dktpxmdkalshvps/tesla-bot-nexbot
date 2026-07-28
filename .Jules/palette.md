@@ -5,3 +5,7 @@
 ## 2026-07-26 - Interactive Divs vs Buttons Pattern
 **Learning:** Found multiple instances where large interactive "card" components (like configuration options) were using `<div>` elements with `onClick` handlers. This creates significant accessibility barriers, as screen readers do not announce them as interactive controls, and they lack native keyboard interaction support (tabbing and enter/space key activation).
 **Action:** Always use native `<button type="button">` elements for interactive elements, even for complex layouts like cards. Apply `w-full text-left` to maintain the expected text layout, use `aria-pressed` for toggle states, and ensure proper `focus-visible` styling is included for keyboard navigation.
+
+## 2024-05-18 - Improve modal accessibility with Escape key support and scroll lock
+**Learning:** Modals present multiple accessibility challenges: they need a clear way to be dismissed without a mouse (Escape key), background content should not be scrollable when open, and focus needs to be managed (first input auto-focused).
+**Action:** Next time I build or refactor a modal, I will ensure `useEffect` is implemented for `keydown` on 'Escape', background scrolling is locked on `document.body.style.overflow`, and autoFocus is placed correctly.

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X, Check, Receipt, Calendar, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2 } from "lucide-react";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
 
@@ -25,6 +25,26 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [reservationId, setReservationId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -157,6 +177,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       id="fullName"
                       type="text"
                       required
+                      autoFocus
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}

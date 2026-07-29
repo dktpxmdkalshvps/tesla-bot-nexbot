@@ -5,3 +5,7 @@
 ## 2026-07-26 - Interactive Divs vs Buttons Pattern
 **Learning:** Found multiple instances where large interactive "card" components (like configuration options) were using `<div>` elements with `onClick` handlers. This creates significant accessibility barriers, as screen readers do not announce them as interactive controls, and they lack native keyboard interaction support (tabbing and enter/space key activation).
 **Action:** Always use native `<button type="button">` elements for interactive elements, even for complex layouts like cards. Apply `w-full text-left` to maintain the expected text layout, use `aria-pressed` for toggle states, and ensure proper `focus-visible` styling is included for keyboard navigation.
+
+## 2026-07-28 - Custom Checkboxes Focus Visibility Pattern
+**Learning:** Using `sr-only` class on an `<input type="checkbox">` hides it visually (which is good for screen readers and semantic HTML), but it removes the native browser focus outline for keyboard users navigating to that element. This makes custom checkbox designs completely inaccessible for keyboard users without a mouse.
+**Action:** Always combine the hidden `<input className="sr-only peer">` with Tailwind's `peer` utility, and use `peer-focus-visible:ring-2` (and related styling) on the adjacent visual replacement `<div>` to ensure the focus state is clearly communicated visually.

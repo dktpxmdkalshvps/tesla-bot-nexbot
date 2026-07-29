@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X, Check, Receipt, Calendar, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2 } from "lucide-react";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
 
@@ -25,6 +25,26 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [reservationId, setReservationId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -229,9 +249,9 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       required
                       checked={formData.agreeTerms}
                       onChange={(e) => setFormData({ ...formData, agreeTerms: e.target.checked })}
-                      className="sr-only"
+                      className="sr-only peer"
                     />
-                    <div className={`w-5 h-5 rounded flex items-center justify-center border flex-shrink-0 transition-colors mt-0.5 ${
+                    <div className={`w-5 h-5 rounded flex items-center justify-center border flex-shrink-0 transition-colors mt-0.5 peer-focus-visible:ring-2 peer-focus-visible:ring-white/50 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-neutral-950 ${
                       formData.agreeTerms ? "bg-white border-white text-neutral-950" : "border-white/20"
                     }`}>
                       {formData.agreeTerms && <Check className="w-3.5 h-3.5 stroke-[3px]" />}

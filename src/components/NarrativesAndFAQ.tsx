@@ -214,7 +214,9 @@ export default function NarrativesAndFAQ() {
                 <button
                   id={`faq-btn-${idx}`}
                   onClick={() => toggleFaq(idx)}
-                  className="w-full flex justify-between items-center px-6 py-5 text-left text-white font-display text-sm font-semibold tracking-wide hover:bg-neutral-950/40 transition-colors cursor-pointer"
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-content-${idx}`}
+                  className="w-full flex justify-between items-center px-6 py-5 text-left text-white font-display text-sm font-semibold tracking-wide hover:bg-neutral-950/40 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
                 >
                   <span>{faq.question}</span>
                   <div className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 transition-transform">
@@ -223,7 +225,12 @@ export default function NarrativesAndFAQ() {
                 </button>
                 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 border-t border-white/5 bg-neutral-950/20">
+                  <div
+                    id={`faq-content-${idx}`}
+                    role="region"
+                    aria-labelledby={`faq-btn-${idx}`}
+                    className="px-6 pb-6 pt-1 border-t border-white/5 bg-neutral-950/20"
+                  >
                     <p className="font-sans text-xs md:text-sm text-neutral-400 leading-relaxed">
                       {faq.answer}
                     </p>

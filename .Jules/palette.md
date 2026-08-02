@@ -9,3 +9,7 @@
 ## 2026-07-28 - Custom Checkboxes Focus Visibility Pattern
 **Learning:** Using `sr-only` class on an `<input type="checkbox">` hides it visually (which is good for screen readers and semantic HTML), but it removes the native browser focus outline for keyboard users navigating to that element. This makes custom checkbox designs completely inaccessible for keyboard users without a mouse.
 **Action:** Always combine the hidden `<input className="sr-only peer">` with Tailwind's `peer` utility, and use `peer-focus-visible:ring-2` (and related styling) on the adjacent visual replacement `<div>` to ensure the focus state is clearly communicated visually.
+
+## 2026-08-02 - Custom Select Dropdown Icon Pattern
+**Learning:** Found an instance where a `<select>` element used Tailwind's `appearance-none` to remove the default OS styling, but no visual indicator (like a dropdown arrow) was provided in its place, reducing discoverability.
+**Action:** When applying `appearance-none` to `<select>` elements to remove default browser styling, always provide a custom dropdown icon (like `ChevronDown` from `lucide-react`) as a visual indicator, add `pointer-events-none` to the icon, and apply sufficient right padding (e.g., `pr-10`) to the select element to prevent text overlap.

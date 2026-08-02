@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Check, Receipt, Calendar, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2 } from "lucide-react";
+import { X, Check, Receipt, Calendar, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2, ChevronDown } from "lucide-react";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
 
 interface PreOrderModalProps {
@@ -230,7 +230,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       id="installationCountry"
                       value={formData.country}
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 focus:border-white/20 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white outline-none transition-colors appearance-none"
+                      className="w-full bg-neutral-950 border border-white/10 focus:border-white/20 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white outline-none transition-colors appearance-none"
                     >
                       {countries.map((c) => (
                         <option key={c} value={c} className="bg-neutral-900 text-white">
@@ -238,6 +238,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                         </option>
                       ))}
                     </select>
+                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500 pointer-events-none" />
                   </div>
                 </div>
 

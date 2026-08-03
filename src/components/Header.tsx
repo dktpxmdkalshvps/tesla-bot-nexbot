@@ -49,8 +49,9 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo / Brand */}
-        <div 
-          className="flex items-center gap-3 cursor-pointer group"
+        <button
+          aria-label="Scroll to top"
+          className="flex items-center gap-3 cursor-pointer group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg p-1 -ml-1"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-white text-neutral-950 transition-transform duration-300 group-hover:scale-105">
@@ -64,7 +65,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
               TESLA COLLABORATIVE
             </span>
           </div>
-        </div>
+        </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
@@ -72,7 +73,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`font-sans text-xs tracking-widest uppercase transition-all duration-300 relative py-1 cursor-pointer ${
+              className={`font-sans text-xs tracking-widest uppercase transition-all duration-300 relative py-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm ${
                 activeSection === item.id
                   ? "text-white font-medium"
                   : "text-neutral-400 hover:text-white"
@@ -91,7 +92,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
           <button
             id="header-preorder-btn"
             onClick={onPreOrderClick}
-            className="group flex items-center gap-2 bg-white text-neutral-950 font-display text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-neutral-200 active:scale-95 transition-all duration-200 cursor-pointer"
+            className="group flex items-center gap-2 bg-white text-neutral-950 font-display text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-neutral-200 active:scale-95 transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
           >
             Pre-order
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -118,7 +119,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-left font-display text-sm tracking-wider uppercase py-2 border-b border-white/5 cursor-pointer ${
+                  className={`text-left font-display text-sm tracking-wider uppercase py-2 border-b border-white/5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm px-1 ${
                   activeSection === item.id ? "text-white" : "text-neutral-400"
                 }`}
               >
@@ -131,7 +132,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
                 setIsMobileMenuOpen(false);
                 onPreOrderClick();
               }}
-              className="mt-4 w-full flex items-center justify-center gap-2 bg-white text-neutral-950 font-display text-xs font-bold tracking-wider uppercase py-3.5 rounded-full hover:bg-neutral-200 transition-colors cursor-pointer"
+                className="mt-4 w-full flex items-center justify-center gap-2 bg-white text-neutral-950 font-display text-xs font-bold tracking-wider uppercase py-3.5 rounded-full hover:bg-neutral-200 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
             >
               Pre-order Now
               <ArrowRight className="w-4 h-4" />

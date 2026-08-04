@@ -156,7 +156,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
 
               <button
                 onClick={onClose}
-                className="bg-white hover:bg-neutral-200 text-neutral-950 font-display text-xs font-semibold tracking-widest uppercase px-8 py-3 rounded-full transition-colors cursor-pointer"
+                className="bg-white hover:bg-neutral-200 text-neutral-950 font-display text-xs font-semibold tracking-widest uppercase px-8 py-3 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               >
                 Close Portal
               </button>
@@ -266,7 +266,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-white hover:bg-neutral-200 disabled:opacity-50 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase py-4 rounded-xl transition-all duration-200 mt-2 cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full bg-white hover:bg-neutral-200 disabled:opacity-50 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase py-4 rounded-xl transition-all duration-200 mt-2 cursor-pointer flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
                 >
                   {isSubmitting ? (
                     <>

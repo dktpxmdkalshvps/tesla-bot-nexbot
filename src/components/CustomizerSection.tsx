@@ -192,7 +192,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
               <button
                 id="customizer-reserve-btn"
                 onClick={handlePreOrderAction}
-                className="w-full mt-6 bg-white hover:bg-neutral-200 active:scale-95 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase py-4 rounded-xl transition-all duration-200 cursor-pointer"
+                className="w-full mt-6 bg-white hover:bg-neutral-200 active:scale-95 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase py-4 rounded-xl transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               >
                 Secure Reservation with this Config
               </button>

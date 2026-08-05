@@ -35,10 +35,18 @@ export default function SpecsSection() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap gap-2 mb-10 border-b border-white/5 pb-6">
+        <div
+          className="flex flex-wrap gap-2 mb-10 border-b border-white/5 pb-6"
+          role="tablist"
+          aria-label="Technical Specifications Categories"
+        >
           {TECH_SPECS.map((group, index) => (
             <button
               key={group.category}
+              role="tab"
+              aria-selected={activeCategoryIndex === index}
+              aria-controls={`specs-panel-${index}`}
+              id={`specs-tab-${index}`}
               onClick={() => {
                 setActiveCategoryIndex(index);
                 setSelectedSpecIndex(0); // Reset selection
@@ -56,7 +64,12 @@ export default function SpecsSection() {
         </div>
 
         {/* Two-Column Specs Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+          role="tabpanel"
+          id={`specs-panel-${activeCategoryIndex}`}
+          aria-labelledby={`specs-tab-${activeCategoryIndex}`}
+        >
           {/* Specs List Column (left) */}
           <div className="lg:col-span-7 space-y-4">
             {activeCategory.items.map((item, index) => (

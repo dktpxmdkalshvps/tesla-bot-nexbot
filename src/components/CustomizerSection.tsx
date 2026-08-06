@@ -262,13 +262,17 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                 Override the optical sensor ring lighting with dynamic customized visual presets.
               </p>
 
-              <div className="flex flex-wrap gap-2.5">
-                {LED_PRESETS.map((preset) => (
+              <div className="flex flex-wrap gap-2.5" role="group" aria-label="LED Ambient Lighting Presets">
+                {LED_PRESETS.map((preset) => {
+                  const isActive = (preset.color === "" && customLedColor === "") || (preset.color !== "" && customLedColor === preset.hex);
+                  return (
                   <button
+                    type="button"
                     key={preset.name}
                     onClick={() => setCustomLedColor(preset.color ? preset.hex : "")}
-                    className={`flex items-center gap-2 px-3.5 py-2 rounded-lg border text-[11px] font-mono tracking-wider transition-all duration-200 cursor-pointer ${
-                      (preset.color === "" && customLedColor === "") || (preset.color !== "" && customLedColor === preset.hex)
+                    aria-pressed={isActive}
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-lg border text-[11px] font-mono tracking-wider transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 ${
+                      isActive
                         ? "bg-neutral-950 border-white/20 text-white"
                         : "bg-neutral-950/40 border-white/5 text-neutral-400 hover:text-white"
                     }`}
@@ -276,7 +280,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                     <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: preset.hex }} />
                     {preset.name}
                   </button>
-                ))}
+                )})}
               </div>
             </div>
 

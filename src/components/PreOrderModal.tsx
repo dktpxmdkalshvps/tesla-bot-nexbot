@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Check, Receipt, Calendar, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2, ChevronDown } from "lucide-react";
+import { X, Check, Receipt, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2, ChevronDown } from "lucide-react";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
 
 interface PreOrderModalProps {

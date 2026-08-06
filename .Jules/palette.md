@@ -20,3 +20,7 @@
 ## 2026-08-05 - Accessible Tabbed Interfaces Pattern
 **Learning:** I encountered a section acting as a tabbed content area that was missing proper structural ARIA semantics. When `button` elements act as tabs switching content panes without the `tablist`, `tab`, and `tabpanel` roles, screen reader users cannot perceive the relationship between the controls and the content, nor the state of the active tab.
 **Action:** Always implement the `role="tablist"` on the container, `role="tab"`, `aria-selected` and `aria-controls` on the tab buttons, and `role="tabpanel"` and `aria-labelledby` on the content panes to ensure the semantic structure of tabbed components is accessible.
+
+## 2026-08-05 - Grouped Selectable Items Accessibility Pattern
+**Learning:** Found custom selectable preset buttons (like LED color choices) that lacked semantic grouping and proper keyboard focus styles, making it hard for screen reader users to understand their relationship and for keyboard users to navigate.
+**Action:** When creating a group of related selectable items, wrap them in a container with `role="group"` and a descriptive `aria-label`. Ensure individual items use `<button type="button">` with `focus-visible` styles and appropriate `aria-pressed` states to indicate selection.

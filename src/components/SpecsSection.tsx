@@ -51,7 +51,7 @@ export default function SpecsSection() {
                 setActiveCategoryIndex(index);
                 setSelectedSpecIndex(0); // Reset selection
               }}
-              className={`flex items-center gap-2.5 px-6 py-3.5 rounded-full font-display text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+              className={`flex items-center gap-2.5 px-6 py-3.5 rounded-full font-display text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 ${
                 activeCategoryIndex === index
                   ? "bg-white text-neutral-950 font-semibold"
                   : "bg-neutral-900 text-neutral-400 hover:text-white border border-white/5"

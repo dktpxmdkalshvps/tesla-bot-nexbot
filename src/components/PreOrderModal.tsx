@@ -88,6 +88,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
           <button 
             onClick={onClose}
             aria-label="Close modal"
+            title="Close (Esc)"
             className="w-8 h-8 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:outline-none transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
@@ -169,7 +170,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
               <form onSubmit={handleSubmit} className="md:col-span-7 space-y-5">
                 <div className="space-y-1.5">
                   <label htmlFor="fullName" className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
-                    Full Name
+                    Full Name <span className="text-red-500" aria-hidden="true">*</span>
                   </label>
                   <div className="relative">
                     <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
@@ -187,7 +188,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
 
                 <div className="space-y-1.5">
                   <label htmlFor="emailAddress" className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
-                    Email Address
+                    Email Address <span className="text-red-500" aria-hidden="true">*</span>
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
@@ -258,7 +259,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       {formData.agreeTerms && <Check className="w-3.5 h-3.5 stroke-[3px]" />}
                     </div>
                     <span className="font-sans text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed">
-                      I agree to the holding deposit policy ($100 refundable anytime prior to shipping invitation) and terms of service.
+                      I agree to the holding deposit policy ($100 refundable anytime prior to shipping invitation) and terms of service. <span className="text-red-500" aria-hidden="true">*</span>
                     </span>
                   </label>
                 </div>

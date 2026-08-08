@@ -181,7 +181,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 focus:border-white/20 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 outline-none transition-colors"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="jane.doe@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 focus:border-white/20 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 outline-none transition-colors"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="+82 10-1234-5678"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 focus:border-white/20 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 outline-none transition-colors"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
                   </div>
                 </div>
@@ -231,7 +231,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       id="installationCountry"
                       value={formData.country}
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 focus:border-white/20 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white outline-none transition-colors appearance-none"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white transition-colors appearance-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     >
                       {countries.map((c) => (
                         <option key={c} value={c} className="bg-neutral-900 text-white">

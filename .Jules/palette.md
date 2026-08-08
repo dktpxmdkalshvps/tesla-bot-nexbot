@@ -24,3 +24,7 @@
 ## 2026-08-05 - Grouped Selectable Items Accessibility Pattern
 **Learning:** Found custom selectable preset buttons (like LED color choices) that lacked semantic grouping and proper keyboard focus styles, making it hard for screen reader users to understand their relationship and for keyboard users to navigate.
 **Action:** When creating a group of related selectable items, wrap them in a container with `role="group"` and a descriptive `aria-label`. Ensure individual items use `<button type="button">` with `focus-visible` styles and appropriate `aria-pressed` states to indicate selection.
+
+## 2026-08-05 - Focus Visibility on Form Fields in Dark Mode
+**Learning:** Found an accessibility issue pattern with form fields in dark mode, where removing the default outline and relying on subtle border changes creates a significant keyboard navigation barrier.
+**Action:** When creating form fields, avoid relying solely on subtle border changes for focus states. Instead, use explicit focus ring classes like `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent` to ensure keyboard navigators can clearly see when an input has focus.

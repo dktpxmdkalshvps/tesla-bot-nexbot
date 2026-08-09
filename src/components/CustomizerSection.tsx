@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FINISHES, TASK_MODULES, UPGRADES } from "../data";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
-import { Heart, Utensils, Shield, Hammer, Check, Plus, Minus, Receipt, Star, Info } from "lucide-react";
+import { Heart, Utensils, Shield, Hammer, Check, Receipt, Star } from "lucide-react";
 
 interface CustomizerSectionProps {
   onPreOrderSubmit: (config: {

@@ -183,7 +183,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                   ))}
                 </div>
 
-                <div className="pt-3 border-t border-white/5 flex justify-between items-baseline">
+                <div className="pt-3 border-t border-white/5 flex justify-between items-baseline" aria-live="polite">
                   <span className="font-display text-sm font-bold text-white uppercase tracking-wider">Total Est. Price</span>
                   <span className="font-mono text-xl font-bold text-red-500">${totalPrice.toLocaleString()}</span>
                 </div>
@@ -212,7 +212,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                 Aerospace-certified exterior coatings designed for high structural resilience and scratch resistance.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4" role="group" aria-label="Chassis Armor Finish">
                 {FINISHES.map((finish) => (
                   <button
                     type="button"
@@ -294,7 +294,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                 Installs specialized local neural weights, sensor calibration, and physical tool integration firmware.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-4" role="group" aria-label="AI Task Core Subsystems">
                 {TASK_MODULES.map((mod) => (
                   <button
                     type="button"
@@ -347,7 +347,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                 Equip additional solid-state energy cells or micro-sensory appendages for maximum efficiency.
               </p>
 
-              <div className="grid grid-cols-1 gap-4">
+              <div className="grid grid-cols-1 gap-4" role="group" aria-label="Performance Upgrades">
                 {UPGRADES.map((upgrade) => {
                   const isChecked = selectedUpgrades.some((u) => u.id === upgrade.id);
                   return (

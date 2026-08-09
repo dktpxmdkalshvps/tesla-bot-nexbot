@@ -28,3 +28,7 @@
 ## 2026-08-05 - Focus Visibility on Form Fields in Dark Mode
 **Learning:** Found an accessibility issue pattern with form fields in dark mode, where removing the default outline and relying on subtle border changes creates a significant keyboard navigation barrier.
 **Action:** When creating form fields, avoid relying solely on subtle border changes for focus states. Instead, use explicit focus ring classes like `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent` to ensure keyboard navigators can clearly see when an input has focus.
+
+## 2023-10-25 - Dynamic Price Updates Accessibility
+**Learning:** Screen readers miss dynamically updating calculations (like totals) if they occur silently outside the user's immediate focus area. Simply updating the text value on the screen is not sufficient for accessibility when prices update based on user choices elsewhere on the page.
+**Action:** When displaying dynamically updating values that are contextually important (such as an updating estimated price total), apply `aria-live="polite"` to the container to ensure screen readers announce changes as users configure options.

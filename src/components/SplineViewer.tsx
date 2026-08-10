@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Maximize2, RefreshCw, Layers, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 export default function SplineViewer() {
   const [isLoading, setIsLoading] = useState(true);

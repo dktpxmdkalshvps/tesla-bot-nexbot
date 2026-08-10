@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TECH_SPECS } from "../data";
-import { Cpu, Zap, Maximize, FileText, Compass, ChevronRight } from "lucide-react";
+import { Cpu, Zap, FileText, Compass, ChevronRight } from "lucide-react";
 
 export default function SpecsSection() {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);

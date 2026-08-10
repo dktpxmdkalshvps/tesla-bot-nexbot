@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Plus, Minus, ShieldCheck, Heart, Sparkles, ChefHat, Flame, Brain, Shield } from "lucide-react";
+import { Plus, Minus, ShieldCheck, Heart, Sparkles, ChefHat, Brain } from "lucide-react";
 
 export default function NarrativesAndFAQ() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);

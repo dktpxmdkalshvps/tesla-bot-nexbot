@@ -73,12 +73,17 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-2xl bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl z-10 flex flex-col max-h-[90vh] transition-all duration-300 scale-100">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+        className="relative w-full max-w-2xl bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl z-10 flex flex-col max-h-[90vh] transition-all duration-300 scale-100"
+      >
         
         {/* Header */}
         <div className="flex justify-between items-center px-8 py-6 border-b border-white/5 bg-neutral-950">
           <div>
-            <h3 className="font-display text-lg font-bold text-white tracking-wider uppercase">
+            <h3 id="modal-title" className="font-display text-lg font-bold text-white tracking-wider uppercase">
               {reservationId ? "Reservation Confirmed" : "Secure Your Pre-order"}
             </h3>
             <p className="font-sans text-xs text-neutral-400">
@@ -178,6 +183,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       id="fullName"
                       type="text"
                       required
+                      autoFocus
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}

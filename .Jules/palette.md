@@ -36,3 +36,7 @@
 ## 2026-08-10 - Modal Dialog Accessibility Pattern
 **Learning:** Found that custom modal implementations often lack the necessary ARIA attributes (`role="dialog"`, `aria-modal="true"`, and `aria-labelledby`) and fail to manage initial focus, leaving screen reader users unaware they are in a dialog and forcing keyboard users to tab through the underlying page to find the modal content.
 **Action:** When implementing custom modals, always add `role="dialog"`, `aria-modal="true"`, and link the modal's title using `aria-labelledby`. Additionally, ensure the first interactive element inside the modal receives focus automatically (e.g., using `autoFocus`) when it opens.
+
+## 2026-08-11 - Skip-to-content Link Pattern
+**Learning:** Modern web applications often have complex sticky headers or navigation bars that can be tedious for keyboard-only and screen reader users to tab through on every single page load. A "skip to main content" link is a critical accessibility standard that is often forgotten.
+**Action:** Always implement a visually hidden skip-to-content link at the very top of the application's DOM tree (`<a href="#main-content" className="sr-only focus:not-sr-only...">Skip to main content</a>`). Ensure the `<main>` element has the corresponding `id="main-content"`, `tabIndex={-1}`, and `focus:outline-none` so it can programmatically receive focus without displaying a confusing focus ring on the entire page wrapper.

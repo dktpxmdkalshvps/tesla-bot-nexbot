@@ -1,0 +1,23 @@
+--- src/App.tsx	2023-10-26 12:00:00.000000000 +0000
++++ src/App.tsx	2023-10-26 12:00:00.000000000 +0000
+@@ -90,11 +90,19 @@
+   return (
+     <div className="min-h-screen bg-neutral-950 text-white font-sans selection:bg-white selection:text-neutral-950">
+
++      {/* Skip to main content link for keyboard users */}
++      <a
++        href="#main-content"
++        className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-6 focus:left-6 focus:px-5 focus:py-3 focus:bg-white focus:text-neutral-950 focus:font-display focus:text-sm focus:font-bold focus:uppercase focus:tracking-wider focus:rounded-full focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-neutral-950 transition-all"
++      >
++        Skip to main content
++      </a>
++
+       {/* Premium Header */}
+       <Header onPreOrderClick={openDefaultPreOrder} activeSection={activeSection} />
+
+       {/* Main Container */}
+-      <main className="relative">
++      <main id="main-content" tabIndex={-1} className="relative focus:outline-none">
+
+         {/* SECTION 1: HERO OVERVIEW */}
+         <section id="overview" className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-between min-h-[90vh]">

@@ -7,7 +7,7 @@ import PreOrderModal from "./components/PreOrderModal";
 import NarrativesAndFAQ from "./components/NarrativesAndFAQ";
 import { BotFinish, TaskModule, BotUpgrade } from "./types";
 import { FINISHES, TASK_MODULES } from "./data";
-import { Cpu, ArrowRight, ShieldCheck, Mail, Globe, Compass, ChevronUp, Github, Twitter, Youtube } from "lucide-react";
+import { ArrowRight, Github, Twitter, Youtube } from "lucide-react";
 
 export default function App() {
   const [isPreOrderOpen, setIsPreOrderOpen] = useState(false);

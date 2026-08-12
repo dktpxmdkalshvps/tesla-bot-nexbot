@@ -224,7 +224,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       required
                       placeholder="jane.doe@example.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value.replace(/[<>]/g, '') })}
                       className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
                   </div>

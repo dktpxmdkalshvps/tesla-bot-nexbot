@@ -41,6 +41,7 @@ export default function SplineViewer() {
         className="relative z-10 w-full h-full scale-[1.02]"
         onLoad={() => setIsLoading(false)}
         allow="autoplay; fullscreen"
+        sandbox="allow-scripts allow-same-origin"
       />
 
       {/* Luxury Interactive HUD Overlay - Non-larp, purely elegant alignment brackets */}

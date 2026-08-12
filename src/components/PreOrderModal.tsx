@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Check, Receipt, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2, ChevronDown } from "lucide-react";
+import { X, Check, Receipt, CreditCard, ShieldCheck, Mail, User, Phone, MapPin, Loader2, ChevronDown, Copy } from "lucide-react";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
 
 interface PreOrderModalProps {
@@ -25,6 +25,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [reservationId, setReservationId] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -63,6 +64,14 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
   };
 
   const countries = ["South Korea", "United States", "Japan", "Germany", "United Kingdom", "United Arab Emirates", "Singapore"];
+
+  const handleCopyId = () => {
+    if (reservationId) {
+      navigator.clipboard.writeText(reservationId);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -120,7 +129,18 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
               {/* Receipt Plate */}
               <div className="bg-neutral-950 border border-white/10 rounded-2xl p-6 text-left max-w-md mx-auto space-y-4">
                 <div className="flex justify-between items-center pb-3 border-b border-white/5 font-mono text-[10px] text-neutral-400">
-                  <span>RECEIPT NO: {reservationId}</span>
+                  <div className="flex items-center gap-2">
+                    <span>RECEIPT NO: {reservationId}</span>
+                    <button
+                      type="button"
+                      onClick={handleCopyId}
+                      aria-label="Copy receipt number to clipboard"
+                      title="Copy Receipt Number"
+                      className="text-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded transition-colors"
+                    >
+                      {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3 h-3" />}
+                    </button>
+                  </div>
                   <span>DATE: {new Date().toLocaleDateString()}</span>
                 </div>
 

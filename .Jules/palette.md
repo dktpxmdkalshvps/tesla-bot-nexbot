@@ -40,3 +40,7 @@
 ## 2026-08-11 - Skip-to-content Link Pattern
 **Learning:** Modern web applications often have complex sticky headers or navigation bars that can be tedious for keyboard-only and screen reader users to tab through on every single page load. A "skip to main content" link is a critical accessibility standard that is often forgotten.
 **Action:** Always implement a visually hidden skip-to-content link at the very top of the application's DOM tree (`<a href="#main-content" className="sr-only focus:not-sr-only...">Skip to main content</a>`). Ensure the `<main>` element has the corresponding `id="main-content"`, `tabIndex={-1}`, and `focus:outline-none` so it can programmatically receive focus without displaying a confusing focus ring on the entire page wrapper.
+
+## 2026-08-12 - Copy to Clipboard Feedback Pattern
+**Learning:** Found that when users are presented with randomly generated important information (like a reservation ID), they often manually highlight and copy it. Providing a dedicated copy button improves UX, but without visual feedback, users are unsure if the action succeeded.
+**Action:** When implementing 'copy to clipboard' functionality, always provide immediate temporary visual feedback (e.g., toggling an icon from 'Copy' to 'Check' for a few seconds using a timeout) and ensure the button is fully accessible with a descriptive aria-label, title tooltip, and focus states.

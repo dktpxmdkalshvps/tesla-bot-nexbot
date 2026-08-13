@@ -24,7 +24,10 @@ export default function App() {
 
   // Track active section for navigation highlighting
   useEffect(() => {
-    const handleScroll = () => {
+    let throttleTimer: ReturnType<typeof setTimeout> | null = null;
+    let lastCallTime = 0;
+
+    const executeScrollCheck = () => {
       const sections = ["overview", "technology", "customizer", "specs"];
       const scrollPosition = window.scrollY + 250;
 
@@ -41,8 +44,27 @@ export default function App() {
       }
     };
 
+    const handleScroll = () => {
+      const now = Date.now();
+      const throttleMs = 100;
+
+      if (now - lastCallTime >= throttleMs) {
+        executeScrollCheck();
+        lastCallTime = now;
+      } else if (!throttleTimer) {
+        throttleTimer = setTimeout(() => {
+          executeScrollCheck();
+          throttleTimer = null;
+          lastCallTime = Date.now();
+        }, throttleMs - (now - lastCallTime));
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (throttleTimer) clearTimeout(throttleTimer);
+    };
   }, []);
 
   // Live ticking elegant clock in footer

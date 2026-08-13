@@ -65,9 +65,11 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
   const upgradesPrice = selectedUpgrades.reduce((sum, u) => sum + u.price, 0);
   const totalPrice = basePrice + finishPrice + modulePrice + upgradesPrice;
 
+  const selectedUpgradeIds = useMemo(() => new Set(selectedUpgrades.map(u => u.id)), [selectedUpgrades]);
+
   // Specs dynamic shift
-  const totalWeight = 56.5 + (selectedModule.id === "industrial" ? 6.2 : 0) + (selectedUpgrades.some(u => u.id === "battery-long") ? 1.8 : 0);
-  const totalBatteryRange = selectedUpgrades.some(u => u.id === "battery-long") ? "16 Hours" : "8 Hours";
+  const totalWeight = 56.5 + (selectedModule.id === "industrial" ? 6.2 : 0) + (selectedUpgradeIds.has("battery-long") ? 1.8 : 0);
+  const totalBatteryRange = selectedUpgradeIds.has("battery-long") ? "16 Hours" : "8 Hours";
 
   const currentLedHex = customLedColor || selectedFinish.accentHex;
 
@@ -353,7 +355,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
 
               <div className="grid grid-cols-1 gap-4" role="group" aria-label="Performance Upgrades">
                 {UPGRADES.map((upgrade) => {
-                  const isChecked = selectedUpgrades.some((u) => u.id === upgrade.id);
+                  const isChecked = selectedUpgradeIds.has(upgrade.id);
                   return (
                     <button
                       type="button"

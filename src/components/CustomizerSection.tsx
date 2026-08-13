@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { FINISHES, TASK_MODULES, UPGRADES } from "../data";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
 import { Heart, Utensils, Shield, Hammer, Check, Receipt, Star } from "lucide-react";
+
+const STATIC_LED_PRESETS = [
+  { name: "Laser Red", color: "Red", hex: "#EF4444" },
+  { name: "Deep Cobalt", color: "Cobalt", hex: "#3B82F6" },
+  { name: "Emerald Cyber", color: "Emerald", hex: "#10B981" },
+  { name: "Solar Amber", color: "Amber", hex: "#F59E0B" },
+  { name: "Nebula Pink", color: "Pink", hex: "#EC4899" },
+];
 
 interface CustomizerSectionProps {
   onPreOrderSubmit: (config: {
@@ -23,14 +31,10 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
   const basePrice = 19900;
 
   // Manual LED override colors
-  const LED_PRESETS = [
+  const LED_PRESETS = useMemo(() => [
     { name: "Chassis Default", color: "", hex: selectedFinish.accentHex },
-    { name: "Laser Red", color: "Red", hex: "#EF4444" },
-    { name: "Deep Cobalt", color: "Cobalt", hex: "#3B82F6" },
-    { name: "Emerald Cyber", color: "Emerald", hex: "#10B981" },
-    { name: "Solar Amber", color: "Amber", hex: "#F59E0B" },
-    { name: "Nebula Pink", color: "Pink", hex: "#EC4899" },
-  ];
+    ...STATIC_LED_PRESETS
+  ], [selectedFinish.accentHex]);
 
   const handleUpgradeToggle = (upgrade: BotUpgrade) => {
     if (selectedUpgrades.some((u) => u.id === upgrade.id)) {

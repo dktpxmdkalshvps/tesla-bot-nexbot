@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Cpu, Menu, X, ArrowRight } from "lucide-react";
 
+const MENU_ITEMS = [
+  { id: "overview", label: "Overview" },
+  { id: "technology", label: "Technology" },
+  { id: "customizer", label: "Customizer" },
+  { id: "specs", label: "Specifications" },
+];
+
 interface HeaderProps {
   onPreOrderClick: () => void;
   activeSection: string;
@@ -39,13 +46,6 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
     }
   };
 
-  const menuItems = [
-    { id: "overview", label: "Overview" },
-    { id: "technology", label: "Technology" },
-    { id: "customizer", label: "Customizer" },
-    { id: "specs", label: "Specifications" },
-  ];
-
   return (
     <header
       id="main-header"
@@ -77,7 +77,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {menuItems.map((item) => (
+          {MENU_ITEMS.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
@@ -123,7 +123,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
       {isMobileMenuOpen && (
         <div className="md:hidden fixed inset-x-0 top-[73px] bg-neutral-950 border-b border-white/5 py-6 px-6 shadow-2xl transition-all duration-300">
           <div className="flex flex-col gap-5">
-            {menuItems.map((item) => (
+            {MENU_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}

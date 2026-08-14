@@ -1,92 +1,92 @@
 import React, { useState } from "react";
 import { Plus, Minus, ShieldCheck, Heart, Sparkles, ChefHat, Brain } from "lucide-react";
 
+const narratives = [
+  {
+    id: "kitchen",
+    tag: "CULINARY CORE",
+    title: "Nexbot works in the kitchen",
+    desc: "Armed with precise volumetric haptic hands and high-tolerance liquid dynamic scripts, Nexbot handles pan sautéing, portioning, and meticulous post-meal sterilization.",
+    highlight: "Trained on over 20,000 gourmet recipes and NSF kitchen safety codes.",
+    stats: [
+      { label: "Precision Handling", value: "0.1 N sensitivity" },
+      { label: "Thermal Range", value: "-20°C to 280°C" },
+    ],
+    icon: <ChefHat className="w-5 h-5 text-red-500" />
+  },
+  {
+    id: "navigation",
+    tag: "SPATIAL COGNITION",
+    title: "Adapts to spaces it has never seen",
+    desc: "Utilizing zero-shot generative spatial modeling, Nexbot maps your home instantly on the first walk, predicting object locations and planning ideal paths around pets, rugs, and steps.",
+    highlight: "Never gets stuck. Constantly updates safe pathways.",
+    stats: [
+      { label: "Mapping Frequency", value: "240 frames/sec" },
+      { label: "Object Recall", value: "99.8% precision" },
+    ],
+    icon: <Brain className="w-5 h-5 text-blue-500" />
+  },
+  {
+    id: "learning",
+    tag: "CONTINUOUS SHARING",
+    title: "Always learning, always improving",
+    desc: "Our neural fleet gathers anonymous pathing updates and dexterous manipulation trials from other units globally. Your Nexbot improves overnight, mastering new skills while you sleep.",
+    highlight: "Enables natural intuition over simple raw imitation.",
+    stats: [
+      { label: "Fleet Updates", value: "Overnight OTA" },
+      { label: "Skill Library", value: "4,500+ procedures" },
+    ],
+    icon: <Sparkles className="w-5 h-5 text-amber-500" />
+  }
+];
+
+const pillars = [
+  {
+    title: "Local Privacy First",
+    desc: "All spatial mappings, voice signatures, and camera streams are fully processed on the local FSD HW5 processor. Zero private home footage is uploaded to any cloud server.",
+    icon: <ShieldCheck className="w-6 h-6 text-emerald-500" />
+  },
+  {
+    title: "Absolute Mechanical Safety",
+    desc: "Custom torque-limiting clutches immediately disengage joints if a structural collision is detected, ensuring gentle contact that is perfectly safe for children and household pets.",
+    icon: <Heart className="w-6 h-6 text-red-500" />
+  },
+  {
+    title: "Tailored to Your Space",
+    desc: "Choose from an array of anodized premium armor plating and soft-fabric limb sleeves to complement the interior design aesthetic of your home or private workspace.",
+    icon: <Sparkles className="w-6 h-6 text-blue-500" />
+  }
+];
+
+const faqs = [
+  {
+    question: "What domestic chores can Nexbot manage?",
+    answer: "Nexbot is fully trained to manage high-dexterity kitchen cooking, automatic dishwasher loading, detailed laundry folding, heavy lifting, and customizable night-watch patrolling. It is regularly updated with new skills via the cloud-based Tesla Skill Library."
+  },
+  {
+    question: "Is Nexbot available for purchase today?",
+    answer: "Alpha pre-orders are currently open globally. Production slots are allocated based on the chronological order of the holding deposits. Initial deliveries are scheduled for late 2026."
+  },
+  {
+    question: "What is the holding deposit policy?",
+    answer: "The $100 pre-order deposit is fully refundable at any time prior to your official shipping and customization invitation. You can manage your reservation directly in your personal portal."
+  },
+  {
+    question: "How long does the battery last and how does it charge?",
+    answer: "The standard 2.3 kWh solid-state core provides 8 hours of active household labor. The Long-Range Core upgrade extends this to 16 hours. When energy falls below 15%, Nexbot returns autonomously to its compact magnetic dock to fast-charge in 45 minutes."
+  },
+  {
+    question: "Is Nexbot safe around children and pets?",
+    answer: "Yes. Nexbot utilizes custom physical strain wave actuators that actively monitor torque. If any resistance greater than 5 Newtons is met (comparable to a light tap), the actuator halts instantly. It also includes localized voice fail-safes."
+  }
+];
+
 export default function NarrativesAndFAQ() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
-
-  const narratives = [
-    {
-      id: "kitchen",
-      tag: "CULINARY CORE",
-      title: "Nexbot works in the kitchen",
-      desc: "Armed with precise volumetric haptic hands and high-tolerance liquid dynamic scripts, Nexbot handles pan sautéing, portioning, and meticulous post-meal sterilization.",
-      highlight: "Trained on over 20,000 gourmet recipes and NSF kitchen safety codes.",
-      stats: [
-        { label: "Precision Handling", value: "0.1 N sensitivity" },
-        { label: "Thermal Range", value: "-20°C to 280°C" },
-      ],
-      icon: <ChefHat className="w-5 h-5 text-red-500" />
-    },
-    {
-      id: "navigation",
-      tag: "SPATIAL COGNITION",
-      title: "Adapts to spaces it has never seen",
-      desc: "Utilizing zero-shot generative spatial modeling, Nexbot maps your home instantly on the first walk, predicting object locations and planning ideal paths around pets, rugs, and steps.",
-      highlight: "Never gets stuck. Constantly updates safe pathways.",
-      stats: [
-        { label: "Mapping Frequency", value: "240 frames/sec" },
-        { label: "Object Recall", value: "99.8% precision" },
-      ],
-      icon: <Brain className="w-5 h-5 text-blue-500" />
-    },
-    {
-      id: "learning",
-      tag: "CONTINUOUS SHARING",
-      title: "Always learning, always improving",
-      desc: "Our neural fleet gathers anonymous pathing updates and dexterous manipulation trials from other units globally. Your Nexbot improves overnight, mastering new skills while you sleep.",
-      highlight: "Enables natural intuition over simple raw imitation.",
-      stats: [
-        { label: "Fleet Updates", value: "Overnight OTA" },
-        { label: "Skill Library", value: "4,500+ procedures" },
-      ],
-      icon: <Sparkles className="w-5 h-5 text-amber-500" />
-    }
-  ];
-
-  const pillars = [
-    {
-      title: "Local Privacy First",
-      desc: "All spatial mappings, voice signatures, and camera streams are fully processed on the local FSD HW5 processor. Zero private home footage is uploaded to any cloud server.",
-      icon: <ShieldCheck className="w-6 h-6 text-emerald-500" />
-    },
-    {
-      title: "Absolute Mechanical Safety",
-      desc: "Custom torque-limiting clutches immediately disengage joints if a structural collision is detected, ensuring gentle contact that is perfectly safe for children and household pets.",
-      icon: <Heart className="w-6 h-6 text-red-500" />
-    },
-    {
-      title: "Tailored to Your Space",
-      desc: "Choose from an array of anodized premium armor plating and soft-fabric limb sleeves to complement the interior design aesthetic of your home or private workspace.",
-      icon: <Sparkles className="w-6 h-6 text-blue-500" />
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "What domestic chores can Nexbot manage?",
-      answer: "Nexbot is fully trained to manage high-dexterity kitchen cooking, automatic dishwasher loading, detailed laundry folding, heavy lifting, and customizable night-watch patrolling. It is regularly updated with new skills via the cloud-based Tesla Skill Library."
-    },
-    {
-      question: "Is Nexbot available for purchase today?",
-      answer: "Alpha pre-orders are currently open globally. Production slots are allocated based on the chronological order of the holding deposits. Initial deliveries are scheduled for late 2026."
-    },
-    {
-      question: "What is the holding deposit policy?",
-      answer: "The $100 pre-order deposit is fully refundable at any time prior to your official shipping and customization invitation. You can manage your reservation directly in your personal portal."
-    },
-    {
-      question: "How long does the battery last and how does it charge?",
-      answer: "The standard 2.3 kWh solid-state core provides 8 hours of active household labor. The Long-Range Core upgrade extends this to 16 hours. When energy falls below 15%, Nexbot returns autonomously to its compact magnetic dock to fast-charge in 45 minutes."
-    },
-    {
-      question: "Is Nexbot safe around children and pets?",
-      answer: "Yes. Nexbot utilizes custom physical strain wave actuators that actively monitor torque. If any resistance greater than 5 Newtons is met (comparable to a light tap), the actuator halts instantly. It also includes localized voice fail-safes."
-    }
-  ];
 
   return (
     <div id="technology" className="bg-neutral-950 py-24 border-t border-white/5 space-y-28 relative">

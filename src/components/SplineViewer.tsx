@@ -35,6 +35,7 @@ export default function SplineViewer() {
       {/* Active Spline 3D Embed */}
       <iframe
         src="https://my.spline.design/nexbotrobotcharacterconcept-5VztGCi5Suv6HE0QYmvKpuog/"
+        title="Nexbot 3D Interactive Model"
         frameBorder="0"
         width="100%"
         height="100%"

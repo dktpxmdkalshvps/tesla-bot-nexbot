@@ -14,6 +14,8 @@ interface PreOrderModalProps {
   } | null;
 }
 
+const COUNTRIES = ["South Korea", "United States", "Japan", "Germany", "United Kingdom", "United Arab Emirates", "Singapore"];
+
 export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModalProps) {
   const [formData, setFormData] = useState({
     name: "",
@@ -62,8 +64,6 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
       setIsSubmitting(false);
     }, 1500);
   };
-
-  const countries = ["South Korea", "United States", "Japan", "Germany", "United Kingdom", "United Arab Emirates", "Singapore"];
 
   const handleCopyId = () => {
     if (reservationId) {
@@ -259,7 +259,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                       className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white transition-colors appearance-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     >
-                      {countries.map((c) => (
+                      {COUNTRIES.map((c) => (
                         <option key={c} value={c} className="bg-neutral-900 text-white">
                           {c}
                         </option>

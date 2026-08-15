@@ -207,8 +207,11 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
+                    {formData.name.trim().length >= 2 && (
+                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
+                    )}
                   </div>
                 </div>
 
@@ -225,8 +228,11 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="jane.doe@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value.replace(/[<>]/g, '') })}
-                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
+                    {/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) && (
+                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
+                    )}
                   </div>
                 </div>
 
@@ -242,7 +248,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="+82 10-1234-5678"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-4 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
                   </div>
                 </div>

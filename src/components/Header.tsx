@@ -59,6 +59,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
         {/* Logo / Brand */}
         <button
           aria-label="Scroll to top"
+          title="Scroll to top"
           className="flex items-center gap-3 cursor-pointer group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg p-1 -ml-1"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
@@ -112,6 +113,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
           id="mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          title={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
           className="md:hidden text-white hover:text-neutral-300 focus-visible:ring-2 focus-visible:outline-none transition-colors cursor-pointer"
         >

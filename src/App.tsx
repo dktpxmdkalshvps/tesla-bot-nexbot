@@ -260,13 +260,13 @@ export default function App() {
           <div>
             <span className="font-display text-xs font-bold text-white uppercase tracking-wider block mb-4">SOCIAL & FLEET</span>
             <div className="flex gap-4">
-              <a href="#" aria-label="Twitter" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
+              <a href="#" title="Twitter" aria-label="Twitter" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="YouTube" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
+              <a href="#" title="YouTube" aria-label="YouTube" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
                 <Youtube className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="GitHub" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
+              <a href="#" title="GitHub" aria-label="GitHub" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
                 <Github className="w-4 h-4" />
               </a>
             </div>

@@ -59,7 +59,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
 
     // Simulate luxury API call delay
     setTimeout(() => {
-      const generatedId = `TX-BOT-${Math.floor(100000 + Math.random() * 900000)}`;
+      const generatedId = `TX-BOT-${crypto.randomUUID()}`;
       setReservationId(generatedId);
       setIsSubmitting(false);
     }, 1500);

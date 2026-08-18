@@ -1,0 +1,43 @@
+import { render, screen, fireEvent, within } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import '@testing-library/jest-dom';
+import CustomizerSection from '../CustomizerSection';
+
+describe('CustomizerSection Component', () => {
+  it('toggles upgrades and updates total price correctly', () => {
+    const mockOnPreOrderSubmit = vi.fn();
+    render(<CustomizerSection onPreOrderSubmit={mockOnPreOrderSubmit} />);
+
+    // Initial total price (Base 19900 + Titanium Finish 0 + Companion Module 3000 = 22900)
+    const initialPriceElement = screen.getByText('$22,900');
+    expect(initialPriceElement).toBeInTheDocument();
+
+    // Find the 'Long-Range Solid-State Core' button
+    const upgradeGroup = screen.getByRole('group', { name: /Performance Upgrades/i });
+    const longRangeButton = within(upgradeGroup).getByRole('button', { name: /Long-Range Solid-State Core/i });
+
+    // Verify initial state is unpressed
+    expect(longRangeButton).toHaveAttribute('aria-pressed', 'false');
+
+    // Toggle on
+    fireEvent.click(longRangeButton);
+    expect(longRangeButton).toHaveAttribute('aria-pressed', 'true');
+
+    // Total price should increase by 2500 (22900 + 2500 = 25400)
+    expect(screen.getByText('$25,400')).toBeInTheDocument();
+
+    // Test multiple upgrades
+    const nanoSensoryButton = within(upgradeGroup).getByRole('button', { name: /Nano-Sensory Tactile Hands/i });
+    fireEvent.click(nanoSensoryButton);
+    expect(nanoSensoryButton).toHaveAttribute('aria-pressed', 'true');
+    // Total price should increase by 1800 (25400 + 1800 = 27200)
+    expect(screen.getByText('$27,200')).toBeInTheDocument();
+
+    // Toggle off the first upgrade
+    fireEvent.click(longRangeButton);
+    expect(longRangeButton).toHaveAttribute('aria-pressed', 'false');
+    expect(nanoSensoryButton).toHaveAttribute('aria-pressed', 'true');
+    // Total price should drop by 2500 (27200 - 2500 = 24700)
+    expect(screen.getByText('$24,700')).toBeInTheDocument();
+  });
+});

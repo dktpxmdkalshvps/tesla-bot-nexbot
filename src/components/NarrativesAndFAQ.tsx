@@ -216,7 +216,7 @@ export default function NarrativesAndFAQ() {
                   onClick={() => toggleFaq(idx)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-content-${idx}`}
-                  className="w-full flex justify-between items-center px-6 py-5 text-left text-white font-display text-sm font-semibold tracking-wide hover:bg-neutral-950/40 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                  className="w-full flex justify-between items-center px-6 py-5 text-left text-white font-display text-sm font-semibold tracking-wide hover:bg-neutral-950/40 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
                 >
                   <span>{faq.question}</span>
                   <div className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 transition-transform">

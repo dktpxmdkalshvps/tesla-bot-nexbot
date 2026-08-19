@@ -44,3 +44,7 @@
 ## 2026-08-12 - Copy to Clipboard Feedback Pattern
 **Learning:** Found that when users are presented with randomly generated important information (like a reservation ID), they often manually highlight and copy it. Providing a dedicated copy button improves UX, but without visual feedback, users are unsure if the action succeeded.
 **Action:** When implementing 'copy to clipboard' functionality, always provide immediate temporary visual feedback (e.g., toggling an icon from 'Copy' to 'Check' for a few seconds using a timeout) and ensure the button is fully accessible with a descriptive aria-label, title tooltip, and focus states.
+
+## 2026-08-19 - Consistent Inline Form Validation
+**Learning:** Found that while required inputs (Name and Email) provided a visual checkmark when successfully populated, optional inputs (like Phone Number) did not provide any feedback. This inconsistency creates a disjointed user experience where users might think the form is broken or their optional input was not accepted.
+**Action:** Provide consistent inline validation feedback (such as displaying a green checkmark icon) inside all form input fields when the user has entered valid data, ensuring that right padding (e.g., `pr-10`) is adjusted to prevent text from overlapping the icon. Consistency across both required and optional fields creates a more unified UX.

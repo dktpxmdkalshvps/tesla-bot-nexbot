@@ -250,6 +250,9 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
+                    {formData.phone.trim().length >= 7 && (
+                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
+                    )}
                   </div>
                 </div>
 

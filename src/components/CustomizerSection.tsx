@@ -21,6 +21,21 @@ interface CustomizerSectionProps {
   }) => void;
 }
 
+export const getModuleIcon = (id: string) => {
+  switch (id) {
+    case "companion":
+      return <Heart className="w-5 h-5 text-red-500" data-testid="icon-companion" />;
+    case "kitchen":
+      return <Utensils className="w-5 h-5 text-amber-500" data-testid="icon-kitchen" />;
+    case "security":
+      return <Shield className="w-5 h-5 text-emerald-500" data-testid="icon-security" />;
+    case "industrial":
+      return <Hammer className="w-5 h-5 text-blue-500" data-testid="icon-industrial" />;
+    default:
+      return <Star className="w-5 h-5 text-white" data-testid="icon-default" />;
+  }
+};
+
 export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectionProps) {
   // Config state
   const [selectedFinish, setSelectedFinish] = useState<BotFinish>(FINISHES[0]);
@@ -41,21 +56,6 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
       setSelectedUpgrades(selectedUpgrades.filter((u) => u.id !== upgrade.id));
     } else {
       setSelectedUpgrades([...selectedUpgrades, upgrade]);
-    }
-  };
-
-  const getModuleIcon = (id: string) => {
-    switch (id) {
-      case "companion":
-        return <Heart className="w-5 h-5 text-red-500" />;
-      case "kitchen":
-        return <Utensils className="w-5 h-5 text-amber-500" />;
-      case "security":
-        return <Shield className="w-5 h-5 text-emerald-500" />;
-      case "industrial":
-        return <Hammer className="w-5 h-5 text-blue-500" />;
-      default:
-        return <Star className="w-5 h-5 text-white" />;
     }
   };
 

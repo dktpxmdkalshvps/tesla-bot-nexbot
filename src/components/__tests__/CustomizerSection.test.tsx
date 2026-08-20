@@ -1,9 +1,41 @@
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom';
-import CustomizerSection from '../CustomizerSection';
+import CustomizerSection, { getModuleIcon } from '../CustomizerSection';
 
 describe('CustomizerSection Component', () => {
+  describe('getModuleIcon', () => {
+    it('returns the companion icon for "companion"', () => {
+      render(getModuleIcon('companion'));
+      expect(screen.getByTestId('icon-companion')).toBeInTheDocument();
+      expect(screen.getByTestId('icon-companion')).toHaveClass('text-red-500');
+    });
+
+    it('returns the kitchen icon for "kitchen"', () => {
+      render(getModuleIcon('kitchen'));
+      expect(screen.getByTestId('icon-kitchen')).toBeInTheDocument();
+      expect(screen.getByTestId('icon-kitchen')).toHaveClass('text-amber-500');
+    });
+
+    it('returns the security icon for "security"', () => {
+      render(getModuleIcon('security'));
+      expect(screen.getByTestId('icon-security')).toBeInTheDocument();
+      expect(screen.getByTestId('icon-security')).toHaveClass('text-emerald-500');
+    });
+
+    it('returns the industrial icon for "industrial"', () => {
+      render(getModuleIcon('industrial'));
+      expect(screen.getByTestId('icon-industrial')).toBeInTheDocument();
+      expect(screen.getByTestId('icon-industrial')).toHaveClass('text-blue-500');
+    });
+
+    it('returns the default star icon for unknown ids', () => {
+      render(getModuleIcon('unknown-id'));
+      expect(screen.getByTestId('icon-default')).toBeInTheDocument();
+      expect(screen.getByTestId('icon-default')).toHaveClass('text-white');
+    });
+  });
+
   it('toggles upgrades and updates total price correctly', () => {
     const mockOnPreOrderSubmit = vi.fn();
     render(<CustomizerSection onPreOrderSubmit={mockOnPreOrderSubmit} />);

@@ -48,3 +48,7 @@
 ## 2026-08-19 - Consistent Inline Form Validation
 **Learning:** Found that while required inputs (Name and Email) provided a visual checkmark when successfully populated, optional inputs (like Phone Number) did not provide any feedback. This inconsistency creates a disjointed user experience where users might think the form is broken or their optional input was not accepted.
 **Action:** Provide consistent inline validation feedback (such as displaying a green checkmark icon) inside all form input fields when the user has entered valid data, ensuring that right padding (e.g., `pr-10`) is adjusted to prevent text from overlapping the icon. Consistency across both required and optional fields creates a more unified UX.
+
+## 2026-08-20 - Form Autofill UX and Optional Indicators
+**Learning:** Found that checkout and pre-order forms often neglect native HTML `autoComplete` attributes, which forces users (especially on mobile) to manually type standard information like their name, email, and phone number. This creates unnecessary friction. Additionally, not explicitly marking optional fields creates cognitive load, as users might worry a missing asterisk implies it's still required.
+**Action:** Always enhance form UX by applying standard browser `autoComplete` attributes (`name`, `email`, `tel`, `country-name`, etc.) to corresponding input fields. Furthermore, explicitly append an `(Optional)` label to non-required fields to completely eliminate user ambiguity.

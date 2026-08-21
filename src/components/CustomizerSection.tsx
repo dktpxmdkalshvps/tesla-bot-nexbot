@@ -11,6 +11,60 @@ const STATIC_LED_PRESETS = [
   { name: "Nebula Pink", color: "Pink", hex: "#EC4899" },
 ];
 
+
+const bgColors: Record<string, string> = {
+  "#D1D5DB": "bg-[#D1D5DB]",
+  "#1F2937": "bg-[#1F2937]",
+  "#F9FAFB": "bg-[#F9FAFB]",
+  "#F59E0B": "bg-[#F59E0B]",
+  "#EF4444": "bg-[#EF4444]",
+  "#10B981": "bg-[#10B981]",
+  "#3B82F6": "bg-[#3B82F6]",
+  "#F43F5E": "bg-[#F43F5E]",
+  "#EC4899": "bg-[#EC4899]",
+};
+
+const textColors: Record<string, string> = {
+  "#EF4444": "text-[#EF4444]",
+  "#10B981": "text-[#10B981]",
+  "#3B82F6": "text-[#3B82F6]",
+  "#F43F5E": "text-[#F43F5E]",
+  "#F59E0B": "text-[#F59E0B]",
+  "#EC4899": "text-[#EC4899]",
+};
+
+const borderColors: Record<string, string> = {
+  "#D1D5DB": "border-[#D1D5DB]",
+  "#1F2937": "border-[#1F2937]",
+  "#F9FAFB": "border-[#F9FAFB]",
+  "#F59E0B": "border-[#F59E0B]",
+};
+
+const finishBgCore: Record<string, string> = {
+  "#D1D5DB": "bg-[#D1D5DB15]",
+  "#1F2937": "bg-[#1F293715]",
+  "#F9FAFB": "bg-[#F9FAFB15]",
+  "#F59E0B": "bg-[#F59E0B15]",
+};
+
+const ledBorderRing: Record<string, string> = {
+  "#EF4444": "border-[#EF444444]",
+  "#10B981": "border-[#10B98144]",
+  "#3B82F6": "border-[#3B82F644]",
+  "#F43F5E": "border-[#F43F5E44]",
+  "#F59E0B": "border-[#F59E0B44]",
+  "#EC4899": "border-[#EC489944]",
+};
+
+const ledShadow: Record<string, string> = {
+  "#EF4444": "shadow-[0_0_40px_#EF444433]",
+  "#10B981": "shadow-[0_0_40px_#10B98133]",
+  "#3B82F6": "shadow-[0_0_40px_#3B82F633]",
+  "#F43F5E": "shadow-[0_0_40px_#F43F5E33]",
+  "#F59E0B": "shadow-[0_0_40px_#F59E0B33]",
+  "#EC4899": "shadow-[0_0_40px_#EC489933]",
+};
+
 interface CustomizerSectionProps {
   onPreOrderSubmit: (config: {
     finish: BotFinish;
@@ -87,8 +141,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
     <section id="customizer" className="py-24 bg-neutral-900 border-t border-white/5 relative overflow-hidden">
       {/* Dynamic Ambient Background Glow */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[180px] opacity-10 transition-colors duration-1000 pointer-events-none"
-        style={{ backgroundColor: currentLedHex }}
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[180px] opacity-10 transition-colors duration-1000 pointer-events-none ${bgColors[currentLedHex] || ""}`}
       />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -113,7 +166,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
             {/* Visualizer Card */}
             <div className="bg-neutral-950 border border-white/10 rounded-2xl p-6 relative overflow-hidden shadow-2xl">
               <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 px-2.5 py-1 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: currentLedHex }} />
+                <span className={`w-1.5 h-1.5 rounded-full animate-ping ${bgColors[currentLedHex] || ""}`} />
                 <span className="font-mono text-[9px] text-neutral-400 uppercase tracking-widest">VISUALIZER ACTIVE</span>
               </div>
 
@@ -121,23 +174,20 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
               <div className="h-64 flex flex-col justify-center items-center relative rounded-xl bg-neutral-900/50 border border-white/5 overflow-hidden mb-6">
                 
                 {/* Simulated Chassis Representation */}
-                <div className="w-32 h-32 rounded-full border-4 flex items-center justify-center relative transition-all duration-700"
-                  style={{ borderColor: selectedFinish.colorHex, boxShadow: `0 0 40px ${currentLedHex}33` }}>
+                <div className={`w-32 h-32 rounded-full border-4 flex items-center justify-center relative transition-all duration-700 ${borderColors[selectedFinish.colorHex] || ""} ${ledShadow[currentLedHex] || ""}`}>
                   
                   {/* Internal Core Light */}
-                  <div className="w-16 h-16 rounded-full flex flex-col items-center justify-center transition-all duration-700"
-                    style={{ backgroundColor: `${selectedFinish.colorHex}15` }}>
+                  <div className={`w-16 h-16 rounded-full flex flex-col items-center justify-center transition-all duration-700 ${finishBgCore[selectedFinish.colorHex] || ""}`}>
                     {getModuleIcon(selectedModule.id)}
                   </div>
 
                   {/* Laser Sensor Rings */}
-                  <div className="absolute -inset-4 rounded-full border border-dashed animate-[spin_20s_linear_infinite]"
-                    style={{ borderColor: `${currentLedHex}44` }} />
+                  <div className={`absolute -inset-4 rounded-full border border-dashed animate-[spin_20s_linear_infinite] ${ledBorderRing[currentLedHex] || ""}`} />
                 </div>
 
                 <div className="absolute bottom-4 inset-x-6 flex justify-between items-center text-[10px] font-mono text-neutral-400">
                   <span>FINISH: {selectedFinish.name}</span>
-                  <span>ACCENT LED: <span style={{ color: currentLedHex }}>●</span></span>
+                  <span>ACCENT LED: <span className={textColors[currentLedHex] || ""}>●</span></span>
                 </div>
               </div>
 
@@ -235,8 +285,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                     }`}
                   >
                     {/* Circle finish color swatch */}
-                    <div className="w-8 h-8 rounded-full flex-shrink-0 border border-white/20 relative flex items-center justify-center"
-                      style={{ backgroundColor: finish.colorHex }}>
+                    <div className={`w-8 h-8 rounded-full flex-shrink-0 border border-white/20 relative flex items-center justify-center ${bgColors[finish.colorHex] || ""}`}>
                       {selectedFinish.id === finish.id && (
                         <Check className="w-4 h-4 text-neutral-950 mix-blend-difference font-bold" />
                       )}
@@ -284,7 +333,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                           : "bg-neutral-950/40 border-white/5 text-neutral-400 hover:text-white"
                       }`}
                     >
-                      <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: preset.hex }} />
+                      <span className={`w-2.5 h-2.5 rounded-full ${bgColors[preset.hex] || ""}`} />
                       {preset.name}
                     </button>
                   );

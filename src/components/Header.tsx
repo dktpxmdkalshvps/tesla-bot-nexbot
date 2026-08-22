@@ -38,6 +38,19 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -113,7 +126,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
           id="mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          title={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          title={isMobileMenuOpen ? "Close menu (Esc)" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
           className="md:hidden text-white hover:text-neutral-300 focus-visible:ring-2 focus-visible:outline-none transition-colors cursor-pointer"
         >
@@ -142,10 +155,10 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
                 setIsMobileMenuOpen(false);
                 onPreOrderClick();
               }}
-                className="mt-4 w-full flex items-center justify-center gap-2 bg-white text-neutral-950 font-display text-xs font-bold tracking-wider uppercase py-3.5 rounded-full hover:bg-neutral-200 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+                className="group mt-4 w-full flex items-center justify-center gap-2 bg-white text-neutral-950 font-display text-xs font-bold tracking-wider uppercase py-3.5 rounded-full hover:bg-neutral-200 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
             >
               Pre-order Now
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
         </div>

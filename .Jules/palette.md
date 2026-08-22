@@ -52,3 +52,6 @@
 ## 2026-08-20 - Form Autofill UX and Optional Indicators
 **Learning:** Found that checkout and pre-order forms often neglect native HTML `autoComplete` attributes, which forces users (especially on mobile) to manually type standard information like their name, email, and phone number. This creates unnecessary friction. Additionally, not explicitly marking optional fields creates cognitive load, as users might worry a missing asterisk implies it's still required.
 **Action:** Always enhance form UX by applying standard browser `autoComplete` attributes (`name`, `email`, `tel`, `country-name`, etc.) to corresponding input fields. Furthermore, explicitly append an `(Optional)` label to non-required fields to completely eliminate user ambiguity.
+## 2026-08-22 - Mobile Menu Escape Key Pattern
+**Learning:** Found that while custom modals often correctly implement the Escape key for closure, mobile navigation menus/drawers often lack this fundamental keyboard accessibility feature. Users navigating with a keyboard expect to be able to dismiss any full-screen or prominent overlay using the Escape key.
+**Action:** When implementing dismissible overlays (e.g., mobile menus, drawers), always attach a keyboard event listener for the `Escape` key to automatically close the overlay, and add `title="Close (Esc)"` to the toggle button to improve discoverability.

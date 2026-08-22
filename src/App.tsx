@@ -211,10 +211,10 @@ export default function App() {
               <button
                 id="footer-reserve-btn"
                 onClick={openDefaultPreOrder}
-                className="bg-white hover:bg-neutral-200 active:scale-95 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase px-10 py-4.5 rounded-full transition-all duration-200 cursor-pointer shadow-xl inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+                className="group bg-white hover:bg-neutral-200 active:scale-95 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase px-10 py-4.5 rounded-full transition-all duration-200 cursor-pointer shadow-xl inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               >
                 Reserve Your Nexbot
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
           </div>

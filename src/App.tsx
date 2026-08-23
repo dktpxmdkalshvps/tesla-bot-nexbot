@@ -146,16 +146,18 @@ export default function App() {
               <button
                 id="hero-configure-btn"
                 onClick={scrollToCustomizer}
-                className="bg-white hover:bg-neutral-200 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-200 cursor-pointer shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+                className="group inline-flex items-center gap-2 bg-white hover:bg-neutral-200 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-200 cursor-pointer shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               >
                 Configure Customizer
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </button>
               <button
                 id="hero-preorder-btn"
                 onClick={openDefaultPreOrder}
-                className="bg-neutral-900 hover:bg-neutral-800 border border-white/10 hover:border-white/20 text-white font-display text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-200 cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+                className="group inline-flex items-center gap-2 bg-neutral-900 hover:bg-neutral-800 border border-white/10 hover:border-white/20 text-white font-display text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-200 cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               >
                 Reserve Now ($100 Deposit)
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </button>
             </div>
           </div>

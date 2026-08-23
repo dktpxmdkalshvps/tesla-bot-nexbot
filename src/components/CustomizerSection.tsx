@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { FINISHES, TASK_MODULES, UPGRADES } from "../data";
 import { BotFinish, TaskModule, BotUpgrade } from "../types";
-import { Heart, Utensils, Shield, Hammer, Check, Receipt, Star } from "lucide-react";
+import { Heart, Utensils, Shield, Hammer, Check, Receipt, Star, ArrowRight } from "lucide-react";
 
 const STATIC_LED_PRESETS = [
   { name: "Laser Red", color: "Red", hex: "#EF4444" },
@@ -248,9 +248,10 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
               <button
                 id="customizer-reserve-btn"
                 onClick={handlePreOrderAction}
-                className="w-full mt-6 bg-white hover:bg-neutral-200 active:scale-95 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase py-4 rounded-xl transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+                className="group w-full mt-6 inline-flex justify-center items-center gap-2 bg-white hover:bg-neutral-200 active:scale-95 text-neutral-950 font-display text-xs font-bold tracking-widest uppercase py-4 rounded-xl transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               >
                 Secure Reservation with this Config
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </button>
             </div>
           </div>

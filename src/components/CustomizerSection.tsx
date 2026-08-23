@@ -121,6 +121,15 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
 
   const selectedUpgradeIds = useMemo(() => new Set(selectedUpgrades.map(u => u.id)), [selectedUpgrades]);
 
+  const renderedSelectedUpgrades = useMemo(() => (
+    selectedUpgrades.map((upgrade) => (
+      <div key={upgrade.id} className="flex justify-between">
+        <span>Upgrade: {upgrade.name}</span>
+        <span className="font-mono text-white">+${upgrade.price.toLocaleString()}</span>
+      </div>
+    ))
+  ), [selectedUpgrades]);
+
   // Specs dynamic shift
   const totalWeight = 56.5 + (selectedModule.id === "industrial" ? 6.2 : 0) + (selectedUpgradeIds.has("battery-long") ? 1.8 : 0);
   const totalBatteryRange = selectedUpgradeIds.has("battery-long") ? "16 Hours" : "8 Hours";
@@ -231,12 +240,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                       {modulePrice === 0 ? "Included" : `+$${modulePrice.toLocaleString()}`}
                     </span>
                   </div>
-                  {selectedUpgrades.map((upgrade) => (
-                    <div key={upgrade.id} className="flex justify-between">
-                      <span>Upgrade: {upgrade.name}</span>
-                      <span className="font-mono text-white">+${upgrade.price.toLocaleString()}</span>
-                    </div>
-                  ))}
+                  {renderedSelectedUpgrades}
                 </div>
 
                 <div className="pt-3 border-t border-white/5 flex justify-between items-baseline" aria-live="polite">

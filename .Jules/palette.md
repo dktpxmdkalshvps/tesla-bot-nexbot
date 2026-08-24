@@ -55,3 +55,7 @@
 ## 2026-08-22 - Mobile Menu Escape Key Pattern
 **Learning:** Found that while custom modals often correctly implement the Escape key for closure, mobile navigation menus/drawers often lack this fundamental keyboard accessibility feature. Users navigating with a keyboard expect to be able to dismiss any full-screen or prominent overlay using the Escape key.
 **Action:** When implementing dismissible overlays (e.g., mobile menus, drawers), always attach a keyboard event listener for the `Escape` key to automatically close the overlay, and add `title="Close (Esc)"` to the toggle button to improve discoverability.
+
+## 2026-08-24 - Active Navigation Item ARIA Pattern
+**Learning:** Found that while navigation menus often have visual styling (like highlights or underlines) to indicate the active page or section, this state is invisible to screen reader users if standard ARIA attributes are missing.
+**Action:** When creating navigation menus (both desktop and mobile), always dynamically apply `aria-current="true"` (or `aria-current="page"`) to the `<button>` or `<a>` element that corresponds to the currently active section.

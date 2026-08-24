@@ -95,6 +95,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
+              aria-current={activeSection === item.id ? "true" : undefined}
               className={`font-sans text-xs tracking-widest uppercase transition-all duration-300 relative py-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm ${
                 activeSection === item.id
                   ? "text-white font-medium"
@@ -142,7 +143,8 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                  className={`text-left font-display text-sm tracking-wider uppercase py-2 border-b border-white/5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm px-1 ${
+                aria-current={activeSection === item.id ? "true" : undefined}
+                className={`text-left font-display text-sm tracking-wider uppercase py-2 border-b border-white/5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm px-1 ${
                   activeSection === item.id ? "text-white" : "text-neutral-400"
                 }`}
               >

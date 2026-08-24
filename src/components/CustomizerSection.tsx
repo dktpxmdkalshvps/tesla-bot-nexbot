@@ -119,7 +119,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
   const upgradesPrice = selectedUpgrades.reduce((sum, u) => sum + u.price, 0);
   const totalPrice = basePrice + finishPrice + modulePrice + upgradesPrice;
 
-  const selectedUpgradeIds = useMemo(() => new Set(selectedUpgrades.map(u => u.id)), [selectedUpgrades]);
+  const selectedUpgradeIds = useMemo(() => selectedUpgrades.reduce((set, u) => set.add(u.id), new Set<string>()), [selectedUpgrades]);
 
   const renderedSelectedUpgrades = useMemo(() => (
     selectedUpgrades.map((upgrade) => (

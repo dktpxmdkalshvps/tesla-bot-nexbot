@@ -59,3 +59,7 @@
 ## 2026-08-24 - Active Navigation Item ARIA Pattern
 **Learning:** Found that while navigation menus often have visual styling (like highlights or underlines) to indicate the active page or section, this state is invisible to screen reader users if standard ARIA attributes are missing.
 **Action:** When creating navigation menus (both desktop and mobile), always dynamically apply `aria-current="true"` (or `aria-current="page"`) to the `<button>` or `<a>` element that corresponds to the currently active section.
+
+## 2024-05-18 - Accessible 'Copy' Micro-Interaction
+**Learning:** For 'Copy to Clipboard' buttons, dynamically rendering an `aria-live` region only when clicked often fails to announce in screen readers, as the region needs to exist in the DOM *before* the text changes.
+**Action:** Always render a persistent visually hidden `<span aria-live="polite">` element and conditionally update its text content (e.g., `{isCopied ? 'Copied' : ''}`) to guarantee screen reader announcements. Additionally, updating the `aria-label` and `title` attributes on the button itself provides holistic feedback.

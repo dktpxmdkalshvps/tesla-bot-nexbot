@@ -134,11 +134,14 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                     <button
                       type="button"
                       onClick={handleCopyId}
-                      aria-label="Copy receipt number to clipboard"
-                      title="Copy Receipt Number"
+                      aria-label={copied ? "Receipt number copied" : "Copy receipt number to clipboard"}
+                      title={copied ? "Copied!" : "Copy Receipt Number"}
                       className="text-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded transition-colors"
                     >
                       {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3 h-3" />}
+                      <span className="sr-only" aria-live="polite">
+                        {copied ? "Receipt number copied" : ""}
+                      </span>
                     </button>
                   </div>
                   <span>DATE: {new Date().toLocaleDateString()}</span>

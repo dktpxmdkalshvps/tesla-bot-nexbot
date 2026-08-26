@@ -26,13 +26,20 @@ export default function App() {
   useEffect(() => {
     let throttleTimer: ReturnType<typeof setTimeout> | null = null;
     let lastCallTime = 0;
+    let cachedElements: { id: string; el: HTMLElement | null }[] | null = null;
 
     const executeScrollCheck = () => {
-      const sections = ["overview", "technology", "customizer", "specs"];
       const scrollPosition = window.scrollY + 250;
 
-      for (const section of sections) {
-        const el = document.getElementById(section);
+      if (!cachedElements) {
+        const sections = ["overview", "technology", "customizer", "specs"];
+        cachedElements = sections.map((id) => ({
+          id,
+          el: document.getElementById(id),
+        }));
+      }
+
+      for (const { id: section, el } of cachedElements) {
         if (el) {
           const top = el.offsetTop;
           const height = el.offsetHeight;

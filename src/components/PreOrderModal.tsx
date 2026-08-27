@@ -184,6 +184,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
               </div>
 
               <button
+                autoFocus
                 onClick={onClose}
                 className="bg-white hover:bg-neutral-200 text-neutral-950 font-display text-xs font-semibold tracking-widest uppercase px-8 py-3 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               >

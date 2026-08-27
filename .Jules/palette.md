@@ -62,3 +62,7 @@
 ## 2023-10-26 - Accessible Copy to Clipboard Feedback
 **Learning:** Sighted users often rely on visual cues (like an icon changing to a checkmark) for successful 'copy to clipboard' actions, but screen reader users miss this feedback completely unless it's explicitly announced.
 **Action:** When implementing 'copy to clipboard' or similar asynchronous success states, always pair the visual feedback with an `aria-live="polite"` region (e.g., `<span className="sr-only" aria-live="polite">{copied ? 'Copied' : ''}</span>`) and dynamically update the button's `aria-label` and `title` attributes.
+
+## 2024-05-24 - Modal State Change Focus Management
+**Learning:** When a custom modal dialog's internal state changes significantly (e.g., from a form to a success view), keyboard focus can be lost and reset to the document body, causing a poor experience for keyboard and screen reader users.
+**Action:** Always explicitly apply `autoFocus` to the next logical element (like a 'Close' button) when the modal's primary view changes entirely.

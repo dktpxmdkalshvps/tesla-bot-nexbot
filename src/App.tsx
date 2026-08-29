@@ -120,6 +120,10 @@ export default function App() {
       {/* Skip to main content link for keyboard users */}
       <a
         href="#main-content"
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById("main-content")?.focus();
+        }}
         className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-6 focus:left-6 focus:px-5 focus:py-3 focus:bg-white focus:text-neutral-950 focus:font-display focus:text-sm focus:font-bold focus:uppercase focus:tracking-wider focus:rounded-full focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-neutral-950 transition-all"
       >
         Skip to main content

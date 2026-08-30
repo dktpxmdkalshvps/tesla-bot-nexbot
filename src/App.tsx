@@ -249,10 +249,10 @@ export default function App() {
           <div>
             <span className="font-display text-xs font-bold text-white uppercase tracking-wider block mb-4">EXPLORE</span>
             <ul className="space-y-2.5 text-xs font-sans">
-              <li><a href="#overview" className="hover:text-white transition-colors">Overview</a></li>
-              <li><a href="#technology" className="hover:text-white transition-colors">Technology Core</a></li>
-              <li><a href="#customizer" className="hover:text-white transition-colors">Design Customizer</a></li>
-              <li><a href="#specs" className="hover:text-white transition-colors">Technical specs</a></li>
+              <li><a href="#overview" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm">Overview</a></li>
+              <li><a href="#technology" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm">Technology Core</a></li>
+              <li><a href="#customizer" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm">Design Customizer</a></li>
+              <li><a href="#specs" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm">Technical specs</a></li>
             </ul>
           </div>
 
@@ -291,8 +291,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <span>&copy; 2026 Nexbot Robotics Inc. All rights reserved.</span>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy and Cookies</a>
+            <a href="#" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm">Privacy and Cookies</a>
           </div>
         </div>
       </footer>

@@ -1,30 +1,19 @@
 from playwright.sync_api import sync_playwright
 
-def run_cuj(page):
-    page.goto("http://localhost:3000")
-    page.wait_for_timeout(1000)
-
-    # Scroll down to footer to see the links
-    page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-    page.wait_for_timeout(1000)
-
-    # Focus the first footer link (Overview)
-    page.keyboard.press("Tab")
-    page.wait_for_timeout(500)
-
-    # Take screenshot at the key moment
-    page.screenshot(path="/home/jules/verification/screenshots/verification.png")
-    page.wait_for_timeout(1000)
-
-if __name__ == "__main__":
+def take_screenshot():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            record_video_dir="/home/jules/verification/videos"
-        )
-        page = context.new_page()
-        try:
-            run_cuj(page)
-        finally:
-            context.close()
-            browser.close()
+        page = browser.new_page()
+        page.goto('http://127.0.0.1:3000')
+
+        # Press Tab to focus the first element (which should be our skip link)
+        page.keyboard.press("Tab")
+
+        # Wait a moment for any transitions
+        page.wait_for_timeout(1000)
+
+        # Take screenshot
+        page.screenshot(path='skip-link-focused.png')
+        browser.close()
+
+take_screenshot()

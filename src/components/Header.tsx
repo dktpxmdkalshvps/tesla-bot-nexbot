@@ -118,7 +118,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
             className="group flex items-center gap-2 bg-white text-neutral-950 font-display text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-neutral-200 active:scale-95 transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
           >
             Pre-order
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </button>
         </div>
 
@@ -160,7 +160,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
                 className="group mt-4 w-full flex items-center justify-center gap-2 bg-white text-neutral-950 font-display text-xs font-bold tracking-wider uppercase py-3.5 rounded-full hover:bg-neutral-200 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
             >
               Pre-order Now
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
             </button>
           </div>
         </div>

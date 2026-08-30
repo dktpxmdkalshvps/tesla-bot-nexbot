@@ -66,3 +66,7 @@
 ## 2024-05-24 - Modal State Change Focus Management
 **Learning:** When a custom modal dialog's internal state changes significantly (e.g., from a form to a success view), keyboard focus can be lost and reset to the document body, causing a poor experience for keyboard and screen reader users.
 **Action:** Always explicitly apply `autoFocus` to the next logical element (like a 'Close' button) when the modal's primary view changes entirely.
+
+## 2026-08-28 - Focus Visibility on Text Links
+**Learning:** Found that text links, such as those in the footer navigation, often rely only on hover states (like text color changes) and lack explicit `focus-visible` styles. Against dark backgrounds, the browser default focus ring is often invisible, creating a severe accessibility issue for keyboard users.
+**Action:** Always append explicit focus ring classes to all `<a>` and `<button>` text links (e.g., `rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950`) to ensure keyboard navigators can clearly see when a link is focused.

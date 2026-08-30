@@ -249,10 +249,10 @@ export default function App() {
           <div>
             <span className="font-display text-xs font-bold text-white uppercase tracking-wider block mb-4">EXPLORE</span>
             <ul className="space-y-2.5 text-xs font-sans">
-              <li><a href="#overview" className="hover:text-white transition-colors">Overview</a></li>
-              <li><a href="#technology" className="hover:text-white transition-colors">Technology Core</a></li>
-              <li><a href="#customizer" className="hover:text-white transition-colors">Design Customizer</a></li>
-              <li><a href="#specs" className="hover:text-white transition-colors">Technical specs</a></li>
+              <li><a href="#overview" className="hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950">Overview</a></li>
+              <li><a href="#technology" className="hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950">Technology Core</a></li>
+              <li><a href="#customizer" className="hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950">Design Customizer</a></li>
+              <li><a href="#specs" className="hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950">Technical specs</a></li>
             </ul>
           </div>
 
@@ -269,13 +269,13 @@ export default function App() {
           <div>
             <span className="font-display text-xs font-bold text-white uppercase tracking-wider block mb-4">SOCIAL & FLEET</span>
             <div className="flex gap-4">
-              <a href="#" title="Twitter" aria-label="Twitter" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
+              <a href="#" title="Twitter" aria-label="Twitter" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 transition-all">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" title="YouTube" aria-label="YouTube" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
+              <a href="#" title="YouTube" aria-label="YouTube" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 transition-all">
                 <Youtube className="w-4 h-4" />
               </a>
-              <a href="#" title="GitHub" aria-label="GitHub" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:ring-2 focus-visible:outline-none transition-all">
+              <a href="#" title="GitHub" aria-label="GitHub" className="w-9 h-9 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 transition-all">
                 <Github className="w-4 h-4" />
               </a>
             </div>
@@ -291,8 +291,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <span>&copy; 2026 Nexbot Robotics Inc. All rights reserved.</span>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy and Cookies</a>
+            <a href="#" className="hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950">Privacy and Cookies</a>
           </div>
         </div>
       </footer>

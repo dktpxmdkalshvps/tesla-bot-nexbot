@@ -220,7 +220,7 @@ export default function NarrativesAndFAQ() {
                 >
                   <span>{faq.question}</span>
                   <div className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 transition-transform">
-                    {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    {isOpen ? <Minus className="w-3.5 h-3.5" aria-hidden="true" /> : <Plus className="w-3.5 h-3.5" aria-hidden="true" />}
                   </div>
                 </button>
                 

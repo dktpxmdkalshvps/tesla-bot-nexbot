@@ -299,7 +299,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                     <div className={`w-5 h-5 rounded flex items-center justify-center border flex-shrink-0 transition-colors mt-0.5 peer-focus-visible:ring-2 peer-focus-visible:ring-white/50 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-neutral-950 ${
                       formData.agreeTerms ? "bg-white border-white text-neutral-950" : "border-white/20"
                     }`}>
-                      {formData.agreeTerms && <Check className="w-3.5 h-3.5 stroke-[3px]" />}
+                      {formData.agreeTerms && <Check className="w-3.5 h-3.5 stroke-[3px]" aria-hidden="true" />}
                     </div>
                     <span className="font-sans text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed">
                       I agree to the holding deposit policy ($100 refundable anytime prior to shipping invitation) and terms of service. <span className="text-red-500" aria-hidden="true">*</span>
@@ -314,12 +314,12 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                       Processing Deposit...
                     </>
                   ) : (
                     <>
-                      <CreditCard className="w-4 h-4" />
+                      <CreditCard className="w-4 h-4" aria-hidden="true" />
                       Submit Reservation
                     </>
                   )}

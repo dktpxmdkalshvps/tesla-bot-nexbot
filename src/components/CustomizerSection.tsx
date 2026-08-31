@@ -292,7 +292,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                     {/* Circle finish color swatch */}
                     <div className={`w-8 h-8 rounded-full flex-shrink-0 border border-white/20 relative flex items-center justify-center ${bgColors[finish.colorHex] || ""}`}>
                       {selectedFinish.id === finish.id && (
-                        <Check className="w-4 h-4 text-neutral-950 mix-blend-difference font-bold" />
+                        <Check className="w-4 h-4 text-neutral-950 mix-blend-difference font-bold" aria-hidden="true" />
                       )}
                     </div>
                     
@@ -428,7 +428,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                         <div className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${
                           isChecked ? "bg-white border-white text-neutral-950" : "border-white/20"
                         }`}>
-                          {isChecked && <Check className="w-3.5 h-3.5 stroke-[3px]" />}
+                          {isChecked && <Check className="w-3.5 h-3.5 stroke-[3px]" aria-hidden="true" />}
                         </div>
                         <div>
                           <h4 className="font-display text-sm font-semibold text-white">{upgrade.name}</h4>

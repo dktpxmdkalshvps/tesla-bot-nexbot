@@ -1,6 +1,4 @@
-## 2026-07-22 - Icon-only buttons accessibility pattern
-**Learning:** Found multiple critical accessibility issues across the app where interactive elements (lucide-react icons used as buttons or links) lacked accessible names and visible focus states, making them invisible to screen readers and difficult to use via keyboard navigation.
-**Action:** Implemented a standard pattern for all icon-only buttons using `aria-label` and `focus-visible:ring-2 focus-visible:outline-none`. This pattern should be applied consistently to any new icon-only controls.
+## 2024-03-24 - Hiding Decorative Icons
 
 ## 2026-07-26 - Interactive Divs vs Buttons Pattern
 **Learning:** Found multiple instances where large interactive "card" components (like configuration options) were using `<div>` elements with `onClick` handlers. This creates significant accessibility barriers, as screen readers do not announce them as interactive controls, and they lack native keyboard interaction support (tabbing and enter/space key activation).
@@ -70,3 +68,7 @@
 ## 2026-08-28 - Focus Visibility on Text Links
 **Learning:** Found that text links, such as those in the footer navigation, often rely only on hover states (like text color changes) and lack explicit `focus-visible` styles. Against dark backgrounds, the browser default focus ring is often invisible, creating a severe accessibility issue for keyboard users.
 **Action:** Always append explicit focus ring classes to all `<a>` and `<button>` text links (e.g., `rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950`) to ensure keyboard navigators can clearly see when a link is focused.
+
+## 2026-08-28 - Hidden Decorative Icons
+**Learning:** Assistive technologies and screen readers can read purely decorative icons nested inside elements like buttons, creating a redundant and annoying experience. If the parent element contains text that properly describes its function, the icon shouldn't be announced.
+**Action:** Always add `aria-hidden="true"` to purely decorative icons (such as directional arrows inside CTA buttons or links) when the parent element has adequate descriptive text.

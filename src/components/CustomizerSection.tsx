@@ -24,15 +24,6 @@ const bgColors: Record<string, string> = {
   "#EC4899": "bg-[#EC4899]",
 };
 
-const textColors: Record<string, string> = {
-  "#EF4444": "text-[#EF4444]",
-  "#10B981": "text-[#10B981]",
-  "#3B82F6": "text-[#3B82F6]",
-  "#F43F5E": "text-[#F43F5E]",
-  "#F59E0B": "text-[#F59E0B]",
-  "#EC4899": "text-[#EC4899]",
-};
-
 const borderColors: Record<string, string> = {
   "#D1D5DB": "border-[#D1D5DB]",
   "#1F2937": "border-[#1F2937]",
@@ -196,7 +187,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
 
                 <div className="absolute bottom-4 inset-x-6 flex justify-between items-center text-[10px] font-mono text-neutral-400">
                   <span>FINISH: {selectedFinish.name}</span>
-                  <span>ACCENT LED: <span className={textColors[currentLedHex] || ""}>●</span></span>
+                  <span className="flex items-center gap-1.5">ACCENT LED: <span className={`w-2 h-2 rounded-full inline-block ${bgColors[currentLedHex] || ""}`} /></span>
                 </div>
               </div>
 

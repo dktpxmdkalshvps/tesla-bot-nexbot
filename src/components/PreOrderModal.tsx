@@ -116,7 +116,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
             /* SUCCESS & RECEIPT VIEW */
             <div className="space-y-6 text-center py-4">
               <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto mb-4 border border-emerald-500/20">
-                <Check className="w-8 h-8" />
+                <Check className="w-8 h-8" aria-hidden="true" />
               </div>
 
               <div className="space-y-2">
@@ -138,7 +138,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       title={copied ? "Copied!" : "Copy Receipt Number"}
                       className="text-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded transition-colors"
                     >
-                      {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3 h-3" />}
+                      {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" aria-hidden="true" /> : <Copy className="w-3 h-3" aria-hidden="true" />}
                       <span className="sr-only" aria-live="polite">
                         {copied ? "Receipt number copied" : ""}
                       </span>
@@ -178,7 +178,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                 </div>
 
                 <div className="pt-3 border-t border-white/5 flex items-center gap-2 text-[10px] text-neutral-500 font-sans justify-center">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" aria-hidden="true" />
                   <span>Fully secured refundable holding deposit</span>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                     Full Name <span className="text-red-500" aria-hidden="true">*</span>
                   </label>
                   <div className="relative">
-                    <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                    <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" aria-hidden="true" />
                     <input
                       id="fullName"
                       type="text"
@@ -215,7 +215,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
                     {formData.name.trim().length >= 2 && (
-                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
+                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" aria-hidden="true" />
                     )}
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                     Email Address <span className="text-red-500" aria-hidden="true">*</span>
                   </label>
                   <div className="relative">
-                    <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                    <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" aria-hidden="true" />
                     <input
                       id="emailAddress"
                       type="email"
@@ -237,7 +237,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
                     {/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) && (
-                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
+                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" aria-hidden="true" />
                     )}
                   </div>
                 </div>
@@ -247,7 +247,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                     Phone Number <span className="text-neutral-500 font-sans normal-case tracking-normal font-normal ml-1">(Optional)</span>
                   </label>
                   <div className="relative">
-                    <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                    <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" aria-hidden="true" />
                     <input
                       id="phoneNumber"
                       type="tel"
@@ -258,7 +258,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
                     />
                     {formData.phone.trim().length >= 7 && (
-                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
+                      <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" aria-hidden="true" />
                     )}
                   </div>
                 </div>
@@ -268,7 +268,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                     Installation Country
                   </label>
                   <div className="relative">
-                    <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                    <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" aria-hidden="true" />
                     <select
                       id="installationCountry"
                       value={formData.country}
@@ -282,7 +282,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                         </option>
                       ))}
                     </select>
-                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500 pointer-events-none" />
+                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500 pointer-events-none" aria-hidden="true" />
                   </div>
                 </div>
 
@@ -330,7 +330,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
               <div className="md:col-span-5 bg-neutral-950 rounded-2xl border border-white/5 p-5 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-1.5 pb-2.5 border-b border-white/5 mb-4">
-                    <Receipt className="w-4 h-4 text-neutral-400" />
+                    <Receipt className="w-4 h-4 text-neutral-400" aria-hidden="true" />
                     <span className="font-display text-[10px] font-bold text-white uppercase tracking-wider">ORDER SUMMARY</span>
                   </div>
 

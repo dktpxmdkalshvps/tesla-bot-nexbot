@@ -210,7 +210,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
               {/* Invoice breakdown sheet */}
               <div className="bg-neutral-900/40 border border-white/5 rounded-xl p-5 space-y-3">
                 <div className="flex items-center gap-1.5 pb-2 border-b border-white/5">
-                  <Receipt className="w-4 h-4 text-neutral-400" />
+                  <Receipt className="w-4 h-4 text-neutral-400" aria-hidden="true" />
                   <span className="font-display text-xs font-bold text-white uppercase tracking-wider">ESTIMATED INVOICE</span>
                 </div>
                 

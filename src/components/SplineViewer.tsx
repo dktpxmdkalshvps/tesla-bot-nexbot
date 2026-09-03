@@ -70,7 +70,7 @@ export default function SplineViewer() {
         <div className="flex justify-between items-end">
           <div className="bg-neutral-950/60 backdrop-blur-md p-4 rounded-xl border border-white/5 max-w-xs">
             <div className="flex items-center gap-1.5 mb-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-white" />
+              <ShieldCheck className="w-3.5 h-3.5 text-white" aria-hidden="true" />
               <span className="font-display text-xs font-bold text-white uppercase tracking-wider">
                 Full-Axis Simulation
               </span>

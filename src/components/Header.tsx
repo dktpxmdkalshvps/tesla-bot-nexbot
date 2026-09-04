@@ -77,7 +77,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-white text-neutral-950 transition-transform duration-300 group-hover:scale-105">
-            <Cpu className="w-5 h-5" />
+            <Cpu className="w-5 h-5" aria-hidden="true" />
           </div>
           <div>
             <span className="font-display text-lg font-bold tracking-widest text-white block">
@@ -131,7 +131,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
           aria-expanded={isMobileMenuOpen}
           className="md:hidden text-white hover:text-neutral-300 focus-visible:ring-2 focus-visible:outline-none transition-colors cursor-pointer"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
         </button>
       </div>
 

@@ -12,7 +12,7 @@ const narratives = [
       { label: "Precision Handling", value: "0.1 N sensitivity" },
       { label: "Thermal Range", value: "-20°C to 280°C" },
     ],
-    icon: <ChefHat className="w-5 h-5 text-red-500" />
+    icon: <ChefHat className="w-5 h-5 text-red-500" aria-hidden="true" />
   },
   {
     id: "navigation",
@@ -24,7 +24,7 @@ const narratives = [
       { label: "Mapping Frequency", value: "240 frames/sec" },
       { label: "Object Recall", value: "99.8% precision" },
     ],
-    icon: <Brain className="w-5 h-5 text-blue-500" />
+    icon: <Brain className="w-5 h-5 text-blue-500" aria-hidden="true" />
   },
   {
     id: "learning",
@@ -36,7 +36,7 @@ const narratives = [
       { label: "Fleet Updates", value: "Overnight OTA" },
       { label: "Skill Library", value: "4,500+ procedures" },
     ],
-    icon: <Sparkles className="w-5 h-5 text-amber-500" />
+    icon: <Sparkles className="w-5 h-5 text-amber-500" aria-hidden="true" />
   }
 ];
 
@@ -44,17 +44,17 @@ const pillars = [
   {
     title: "Local Privacy First",
     desc: "All spatial mappings, voice signatures, and camera streams are fully processed on the local FSD HW5 processor. Zero private home footage is uploaded to any cloud server.",
-    icon: <ShieldCheck className="w-6 h-6 text-emerald-500" />
+    icon: <ShieldCheck className="w-6 h-6 text-emerald-500" aria-hidden="true" />
   },
   {
     title: "Absolute Mechanical Safety",
     desc: "Custom torque-limiting clutches immediately disengage joints if a structural collision is detected, ensuring gentle contact that is perfectly safe for children and household pets.",
-    icon: <Heart className="w-6 h-6 text-red-500" />
+    icon: <Heart className="w-6 h-6 text-red-500" aria-hidden="true" />
   },
   {
     title: "Tailored to Your Space",
     desc: "Choose from an array of anodized premium armor plating and soft-fabric limb sleeves to complement the interior design aesthetic of your home or private workspace.",
-    icon: <Sparkles className="w-6 h-6 text-blue-500" />
+    icon: <Sparkles className="w-6 h-6 text-blue-500" aria-hidden="true" />
   }
 ];
 

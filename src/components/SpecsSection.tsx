@@ -9,9 +9,9 @@ export default function SpecsSection() {
   const activeCategory = TECH_SPECS[activeCategoryIndex];
 
   const getCategoryIcon = (category: string) => {
-    if (category.includes("Compute")) return <Cpu className="w-4 h-4" />;
-    if (category.includes("Actuation")) return <Zap className="w-4 h-4" />;
-    return <Compass className="w-4 h-4" />;
+    if (category.includes("Compute")) return <Cpu className="w-4 h-4" aria-hidden="true" />;
+    if (category.includes("Actuation")) return <Zap className="w-4 h-4" aria-hidden="true" />;
+    return <Compass className="w-4 h-4" aria-hidden="true" />;
   };
 
   return (

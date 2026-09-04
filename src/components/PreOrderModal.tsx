@@ -14,6 +14,7 @@ interface PreOrderModalProps {
   } | null;
 }
 
+// Static array placed outside component to prevent unnecessary object creation on every render cycle
 const COUNTRIES = ["South Korea", "United States", "Japan", "Germany", "United Kingdom", "United Arab Emirates", "Singapore"];
 
 export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModalProps) {

@@ -69,15 +69,15 @@ interface CustomizerSectionProps {
 export const getModuleIcon = (id: string) => {
   switch (id) {
     case "companion":
-      return <Heart className="w-5 h-5 text-red-500" data-testid="icon-companion" />;
+      return <Heart className="w-5 h-5 text-red-500" data-testid="icon-companion" aria-hidden="true" />;
     case "kitchen":
-      return <Utensils className="w-5 h-5 text-amber-500" data-testid="icon-kitchen" />;
+      return <Utensils className="w-5 h-5 text-amber-500" data-testid="icon-kitchen" aria-hidden="true" />;
     case "security":
-      return <Shield className="w-5 h-5 text-emerald-500" data-testid="icon-security" />;
+      return <Shield className="w-5 h-5 text-emerald-500" data-testid="icon-security" aria-hidden="true" />;
     case "industrial":
-      return <Hammer className="w-5 h-5 text-blue-500" data-testid="icon-industrial" />;
+      return <Hammer className="w-5 h-5 text-blue-500" data-testid="icon-industrial" aria-hidden="true" />;
     default:
-      return <Star className="w-5 h-5 text-white" data-testid="icon-default" />;
+      return <Star className="w-5 h-5 text-white" data-testid="icon-default" aria-hidden="true" />;
   }
 };
 

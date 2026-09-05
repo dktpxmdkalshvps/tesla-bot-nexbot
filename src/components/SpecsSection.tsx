@@ -100,7 +100,7 @@ export default function SpecsSection() {
                         : "border-white/10 text-neutral-500 group-hover:text-white group-hover:border-white/20"
                     }`}
                   >
-                    <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                    <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
                   </div>
                 </div>
               </button>

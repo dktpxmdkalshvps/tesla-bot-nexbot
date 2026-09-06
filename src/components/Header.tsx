@@ -73,7 +73,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
         <button
           aria-label="Scroll to top"
           title="Scroll to top"
-          className="flex items-center gap-3 cursor-pointer group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg p-1 -ml-1"
+          className="flex items-center gap-3 cursor-pointer group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded-lg p-1 -ml-1"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-white text-neutral-950 transition-transform duration-300 group-hover:scale-105">
@@ -96,7 +96,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               aria-current={activeSection === item.id ? "true" : undefined}
-              className={`font-sans text-xs tracking-widest uppercase transition-all duration-300 relative py-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm ${
+              className={`font-sans text-xs tracking-widest uppercase transition-all duration-300 relative py-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded-sm ${
                 activeSection === item.id
                   ? "text-white font-medium"
                   : "text-neutral-400 hover:text-white"
@@ -129,7 +129,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           title={isMobileMenuOpen ? "Close menu (Esc)" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
-          className="md:hidden text-white hover:text-neutral-300 focus-visible:ring-2 focus-visible:outline-none transition-colors cursor-pointer"
+          className="md:hidden text-white hover:text-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 transition-colors cursor-pointer"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
         </button>
@@ -144,7 +144,7 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 aria-current={activeSection === item.id ? "true" : undefined}
-                className={`text-left font-display text-sm tracking-wider uppercase py-2 border-b border-white/5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm px-1 ${
+                className={`text-left font-display text-sm tracking-wider uppercase py-2 border-b border-white/5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded-sm px-1 ${
                   activeSection === item.id ? "text-white" : "text-neutral-400"
                 }`}
               >

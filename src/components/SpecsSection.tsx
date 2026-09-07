@@ -113,7 +113,7 @@ export default function SpecsSection() {
               <div className="bg-neutral-900 rounded-2xl border border-white/10 p-8 sticky top-28 shadow-2xl">
                 <div className="flex items-center gap-2.5 mb-6 pb-4 border-b border-white/5">
                   <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500">
-                    <FileText className="w-4 h-4" />
+                    <FileText className="w-4 h-4" aria-hidden="true" />
                   </div>
                   <div>
                     <span className="font-mono text-[9px] tracking-widest text-neutral-400 uppercase block">

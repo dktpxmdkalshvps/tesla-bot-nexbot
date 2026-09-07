@@ -104,7 +104,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
             onClick={onClose}
             aria-label="Close modal"
             title="Close (Esc)"
-            className="w-8 h-8 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white focus-visible:ring-2 focus-visible:outline-none transition-colors cursor-pointer"
+            className="w-8 h-8 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" aria-hidden="true" />
           </button>
@@ -137,7 +137,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       onClick={handleCopyId}
                       aria-label={copied ? "Receipt number copied" : "Copy receipt number to clipboard"}
                       title={copied ? "Copied!" : "Copy Receipt Number"}
-                      className="text-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded transition-colors"
+                      className="text-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 rounded transition-colors"
                     >
                       {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" aria-hidden="true" /> : <Copy className="w-3 h-3" aria-hidden="true" />}
                       <span className="sr-only" aria-live="polite">
@@ -213,7 +213,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
                     />
                     {formData.name.trim().length >= 2 && (
                       <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" aria-hidden="true" />
@@ -235,7 +235,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="jane.doe@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value.replace(/[<>]/g, '') })}
-                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
                     />
                     {/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) && (
                       <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" aria-hidden="true" />
@@ -256,7 +256,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       placeholder="+82 10-1234-5678"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white placeholder-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
                     />
                     {formData.phone.trim().length >= 7 && (
                       <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" aria-hidden="true" />
@@ -275,7 +275,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
                       value={formData.country}
                       autoComplete="country-name"
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white transition-colors appearance-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent"
+                      className="w-full bg-neutral-950 border border-white/10 rounded-xl py-3 pl-11 pr-10 font-sans text-sm text-white transition-colors appearance-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:border-transparent focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
                     >
                       {COUNTRIES.map((c) => (
                         <option key={c} value={c} className="bg-neutral-900 text-white">

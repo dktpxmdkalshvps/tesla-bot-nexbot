@@ -78,7 +78,7 @@ export default function SpecsSection() {
                 key={item.label}
                 onClick={() => setSelectedSpecIndex(index)}
                 aria-pressed={selectedSpecIndex === index}
-                className={`w-full text-left group p-6 rounded-2xl border transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                className={`w-full text-left group p-6 rounded-2xl border transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 ${
                   selectedSpecIndex === index
                     ? "bg-neutral-900 border-white/20 shadow-xl shadow-black/40"
                     : "bg-neutral-950 border-white/5 hover:border-white/10 hover:bg-neutral-900/40"

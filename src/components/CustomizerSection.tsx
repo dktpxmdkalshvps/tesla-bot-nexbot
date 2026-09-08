@@ -274,7 +274,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                       // Reset custom LED if changing finish unless overridden manually
                     }}
                     aria-pressed={selectedFinish.id === finish.id}
-                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex gap-4 items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex gap-4 items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 ${
                       selectedFinish.id === finish.id
                         ? "bg-neutral-950 border-white/20 shadow-lg"
                         : "bg-neutral-950/40 border-white/5 hover:border-white/10 hover:bg-neutral-950/80"
@@ -354,7 +354,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                     key={mod.id}
                     onClick={() => setSelectedModule(mod)}
                     aria-pressed={selectedModule.id === mod.id}
-                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex gap-4 items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex gap-4 items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 ${
                       selectedModule.id === mod.id
                         ? "bg-neutral-950 border-white/20 shadow-lg"
                         : "bg-neutral-950/40 border-white/5 hover:border-white/10 hover:bg-neutral-950/80"
@@ -409,7 +409,7 @@ export default function CustomizerSection({ onPreOrderSubmit }: CustomizerSectio
                       key={upgrade.id}
                       onClick={() => handleUpgradeToggle(upgrade)}
                       aria-pressed={isChecked}
-                      className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex justify-between items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                      className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer flex justify-between items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 ${
                         isChecked
                           ? "bg-neutral-950 border-white/20 shadow-lg"
                           : "bg-neutral-950/40 border-white/5 hover:border-white/10 hover:bg-neutral-950/80"

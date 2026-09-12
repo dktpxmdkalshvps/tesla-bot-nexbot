@@ -46,9 +46,16 @@ export default function Header({ onPreOrderClick, activeSection }: HeaderProps) 
     };
 
     if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "";
     }
-    return () => window.removeEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [isMobileMenuOpen]);
 
   const scrollToSection = (id: string) => {

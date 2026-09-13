@@ -15,3 +15,7 @@
 ## 2023-10-27 - Background Scroll Locking for Overlays
 **Learning:** For overlays like mobile navigation drawers that do not take up the entire screen (`bottom-0`), users often accidentally scroll the underlying `body` while attempting to interact with or dismiss the drawer.
 **Action:** When creating fixed-position menus or modals, explicitly lock background scrolling by applying `document.body.style.overflow = "hidden"` to the `body` element while the overlay is mounted, and restoring it on unmount.
+
+## 2024-03-24 - Skip-to-Content Links in SPAs
+**Learning:** In Single Page Applications (like React), native hash navigation (e.g. `<a href="#main-content">`) often fails to programmatically move keyboard focus to the target element, leaving keyboard users stranded at the top of the document even after jumping visually.
+**Action:** Always implement a visually hidden skip-to-content link at the top of the DOM tree (e.g., `sr-only focus:not-sr-only`). Target a main container with a matching `id`, `tabIndex={-1}`, and `focus:outline-none`. Explicitly manage focus by adding an `onClick` handler to the link that calls `e.preventDefault()` and `.focus()` on the target element.

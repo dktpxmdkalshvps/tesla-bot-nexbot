@@ -266,7 +266,7 @@ export default function PreOrderModal({ isOpen, onClose, config }: PreOrderModal
 
                 <div className="space-y-1.5">
                   <label htmlFor="installationCountry" className="font-display text-xs font-bold text-neutral-400 uppercase tracking-wider block">
-                    Installation Country
+                    Installation Country <span className="text-red-500" aria-hidden="true">*</span>
                   </label>
                   <div className="relative">
                     <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" aria-hidden="true" />

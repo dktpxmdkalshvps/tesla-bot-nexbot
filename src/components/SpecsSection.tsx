@@ -2,17 +2,29 @@ import React, { useState } from "react";
 import { TECH_SPECS } from "../data";
 import { Cpu, Zap, FileText, Compass, ChevronRight } from "lucide-react";
 
+const CATEGORY_ICONS: Record<string, React.ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>> = {
+  "Neural Compute & AI": Cpu,
+  "Actuation & Power": Zap,
+  "Physical & Dimensions": Compass,
+};
+
+function getCategoryIcon(category: string) {
+  const IconComponent =
+    CATEGORY_ICONS[category] ||
+    (category.includes("Compute")
+      ? Cpu
+      : category.includes("Actuation")
+      ? Zap
+      : Compass);
+
+  return <IconComponent className="w-4 h-4" aria-hidden="true" />;
+}
+
 export default function SpecsSection() {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [selectedSpecIndex, setSelectedSpecIndex] = useState<number | null>(0);
 
   const activeCategory = TECH_SPECS[activeCategoryIndex];
-
-  const getCategoryIcon = (category: string) => {
-    if (category.includes("Compute")) return <Cpu className="w-4 h-4" aria-hidden="true" />;
-    if (category.includes("Actuation")) return <Zap className="w-4 h-4" aria-hidden="true" />;
-    return <Compass className="w-4 h-4" aria-hidden="true" />;
-  };
 
   return (
     <section id="specs" className="py-24 bg-neutral-950 border-t border-white/5 relative overflow-hidden">
